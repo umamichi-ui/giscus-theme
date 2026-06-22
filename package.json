@@ -1,21 +1,31 @@
 {
   "name": "@umamichi-ui/giscus-theme",
-  "version": "0.1.1",
-  "description": "Giscus widget themes vendored from the giscus project for Umamichi UI sites.",
+  "version": "0.2.0",
+  "description": "Giscus widget themes aligned with Umamichi UI (default Aqua palette).",
   "type": "module",
   "license": "(LGPL-3.0-or-later AND MIT)",
   "files": [
-    "styles",
+    "styles/themes",
     "vendor",
     "LICENSE",
     "README.md",
+    "CHANGELOG.md",
     "THIRD_PARTY_NOTICES.md"
   ],
+  "scripts": {
+    "build": "node scripts/build-themes.mjs",
+    "prepublishOnly": "npm run build"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "@umamichi-ui/common-css": "^0.1.10"
+  "peerDependencies": {
+    "@umamichi-ui/common-css": ">=0.12.0"
+  },
+  "devDependencies": {
+    "@umamichi-ui/common-css": "^0.12.0",
+    "postcss": "^8.5.6",
+    "postcss-import": "^16.1.1"
   },
   "exports": {
     "./light.css": "./styles/themes/light.css",

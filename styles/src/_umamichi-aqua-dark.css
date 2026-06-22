@@ -1,0 +1,31 @@
+/* Umamichi default Aqua palette (common-css colors.css + tokens-dark.css). */
+
+main {
+  --color-accent-fg: #7cdcf1;
+  --color-accent-emphasis: #00cbe8;
+  --color-accent-subtle: rgb(124 220 241 / 12%);
+  --color-accent-muted: rgb(124 220 241 / 40%);
+
+  --color-btn-primary-text: #00323a;
+  --color-btn-primary-bg: #00cbe8;
+  --color-btn-primary-hover-bg: #7cdcf1;
+  --color-btn-primary-selected-bg: #00adc7;
+  --color-btn-primary-disabled-bg: rgb(0 203 232 / 60%);
+
+  --color-btn-shadow: 0 0 transparent;
+  --color-btn-inset-shadow: 0 0 transparent;
+  --color-btn-primary-shadow: 0 0 transparent;
+  --color-btn-primary-inset-shadow: 0 0 transparent;
+  --color-primer-shadow-inset: 0 0 transparent;
+
+  --color-scale-blue-8: #007384;
+
+  --color-prettylights-syntax-markup-heading: #7cdcf1;
+  --color-prettylights-syntax-constant: #00cbe8;
+  --color-prettylights-syntax-constant-other-reference-link: #7cdcf1;
+}
+
+.gsc-comment-box-textarea,
+.gsc-button {
+  box-shadow: none;
+}

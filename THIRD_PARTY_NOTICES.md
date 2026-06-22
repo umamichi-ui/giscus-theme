@@ -6,7 +6,7 @@
 
 ### giscus（主题样式源）
 
-`styles/themes/light.css` 与 `styles/themes/dark.css` 为从 **giscus** 项目 **未修改** 复制的文件，与 giscus 源码树中路径 `styles/themes/` 下对应文件一致。
+`styles/src/_giscus-base-light.css` 与 `styles/src/_giscus-base-dark.css` 为从 **giscus** 项目复制的上游主题（与 giscus 源码树 `styles/themes/` 下对应文件一致）。`styles/themes/light.css` 与 `dark.css` 由构建脚本将上述 base 与 Umamichi Aqua 覆盖层（`styles/src/_umamichi-aqua-*.css`）内联合并生成，供 npm 发布。
 
 - 上游仓库：<https://github.com/giscus/giscus>
 - 上游许可：**MIT License**（完整文本见本包内 `vendor/giscus/LICENSE`，与 <https://github.com/giscus/giscus/blob/main/LICENSE> 一致）
