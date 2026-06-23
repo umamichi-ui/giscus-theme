@@ -354,3 +354,239 @@
   }
 }
 }
+/* Match umamichi.moe article-content link style (--site-link / --site-link-hover). */
+.gsc-comments-count a,
+.gsc-left-header a.link-secondary,
+.gsc-comment-header a.link-secondary,
+.gsc-reply-header a.link-secondary,
+.gsc-comment-box-bottom button.link-secondary,
+.gsc-comment-content.markdown a,
+.gsc-reply-content.markdown a,
+.gsc-comment-box-preview.markdown a {
+  color: var(--site-link) !important;
+  text-decoration: none !important;
+  text-underline-offset: 0.15em;
+}
+.gsc-comments-count a:hover,
+.gsc-left-header a.link-secondary:hover,
+.gsc-comment-header a.link-secondary:hover,
+.gsc-reply-header a.link-secondary:hover,
+.gsc-comment-box-bottom button.link-secondary:hover,
+.gsc-comment-content.markdown a:hover,
+.gsc-reply-content.markdown a:hover,
+.gsc-comment-box-preview.markdown a:hover {
+  color: var(--site-link-hover) !important;
+  text-decoration: underline !important;
+}
+.gsc-comment-box-bottom button.link-secondary {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+/*! MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ */
+main {
+  --color-prettylights-syntax-comment: #6e7781;
+  --color-prettylights-syntax-constant: #0550ae;
+  --color-prettylights-syntax-entity: #8250df;
+  --color-prettylights-syntax-storage-modifier-import: #24292f;
+  --color-prettylights-syntax-entity-tag: #116329;
+  --color-prettylights-syntax-keyword: #cf222e;
+  --color-prettylights-syntax-string: #0a3069;
+  --color-prettylights-syntax-variable: #953800;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
+  --color-prettylights-syntax-invalid-illegal-text: #f6f8fa;
+  --color-prettylights-syntax-invalid-illegal-bg: #82071e;
+  --color-prettylights-syntax-carriage-return-text: #f6f8fa;
+  --color-prettylights-syntax-carriage-return-bg: #cf222e;
+  --color-prettylights-syntax-string-regexp: #116329;
+  --color-prettylights-syntax-markup-list: #3b2300;
+  --color-prettylights-syntax-markup-heading: #0550ae;
+  --color-prettylights-syntax-markup-italic: #24292f;
+  --color-prettylights-syntax-markup-bold: #24292f;
+  --color-prettylights-syntax-markup-deleted-text: #82071e;
+  --color-prettylights-syntax-markup-deleted-bg: #ffebe9;
+  --color-prettylights-syntax-markup-inserted-text: #116329;
+  --color-prettylights-syntax-markup-inserted-bg: #dafbe1;
+  --color-prettylights-syntax-markup-changed-text: #953800;
+  --color-prettylights-syntax-markup-changed-bg: #ffd8b5;
+  --color-prettylights-syntax-markup-ignored-text: #eaeef2;
+  --color-prettylights-syntax-markup-ignored-bg: #0550ae;
+  --color-prettylights-syntax-meta-diff-range: #8250df;
+  --color-prettylights-syntax-brackethighlighter-angle: #57606a;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
+  --color-prettylights-syntax-constant-other-reference-link: #0a3069;
+  --color-btn-text: #24292f;
+  --color-btn-bg: #f6f8fa;
+  --color-btn-border: rgb(31 35 40 / 15%);
+  --color-btn-shadow: 0 1px 0 rgb(31 35 40 / 4%);
+  --color-btn-inset-shadow: inset 0 1px 0 rgb(255 255 255 / 25%);
+  --color-btn-hover-bg: #f3f4f6;
+  --color-btn-hover-border: rgb(31 35 40 / 15%);
+  --color-btn-active-bg: hsl(220deg 14% 93% / 100%);
+  --color-btn-active-border: rgb(31 35 40 / 15%);
+  --color-btn-selected-bg: hsl(220deg 14% 94% / 100%);
+  --color-btn-primary-text: #fff;
+  --color-btn-primary-bg: #1f883d;
+  --color-btn-primary-border: rgb(31 35 40 / 15%);
+  --color-btn-primary-shadow: 0 1px 0 rgb(31 35 40 / 10%);
+  --color-btn-primary-inset-shadow: inset 0 1px 0 rgb(255 255 255 / 3%);
+  --color-btn-primary-hover-bg: #1a7f37;
+  --color-btn-primary-hover-border: rgb(31 35 40 / 15%);
+  --color-btn-primary-selected-bg: hsl(137deg 66% 28% / 100%);
+  --color-btn-primary-selected-shadow: inset 0 1px 0 rgb(0 45 17 / 20%);
+  --color-btn-primary-disabled-text: rgb(255 255 255 / 80%);
+  --color-btn-primary-disabled-bg: #94d3a2;
+  --color-btn-primary-disabled-border: rgb(31 35 40 / 15%);
+  --color-action-list-item-default-hover-bg: rgb(208 215 222 / 32%);
+  --color-segmented-control-bg: #eaeef2;
+  --color-segmented-control-button-bg: #fff;
+  --color-segmented-control-button-selected-border: #8c959f;
+  --color-fg-default: #1F2328;
+  --color-fg-muted: #656d76;
+  --color-fg-subtle: #6e7781;
+  --color-canvas-default: #fff;
+  --color-canvas-overlay: #fff;
+  --color-canvas-inset: #f6f8fa;
+  --color-canvas-subtle: #f6f8fa;
+  --color-border-default: #d0d7de;
+  --color-border-muted: hsl(210deg 18% 87% / 100%);
+  --color-neutral-muted: rgb(175 184 193 / 20%);
+  --color-accent-fg: #0969da;
+  --color-accent-emphasis: #0969da;
+  --color-accent-muted: rgb(84 174 255 / 40%);
+  --color-accent-subtle: #ddf4ff;
+  --color-success-fg: #1a7f37;
+  --color-attention-fg: #9a6700;
+  --color-attention-muted: rgb(212 167 44 / 40%);
+  --color-attention-subtle: #fff8c5;
+  --color-danger-fg: #d1242f;
+  --color-danger-muted: rgb(255 129 130 / 40%);
+  --color-danger-subtle: #ffebe9;
+  --color-primer-shadow-inset: inset 0 1px 0 rgb(208 215 222 / 20%);
+  --color-scale-gray-1: #eaeef2;
+  --color-scale-blue-1: #b6e3ff;
+
+  /*! Extensions from @primer/css/alerts/flash.scss */
+  --color-social-reaction-bg-hover: var(--color-scale-gray-1);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1);
+}
+main .pagination-loader-container {
+  background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line.svg");
+}
+main .gsc-loading-image {
+  background-image: url("https://github.githubassets.com/images/mona-loading-default.gif");
+}
+/* Map giscus Primer variables to @umamichi-ui/common-css tokens (light). */
+main {
+  --color-canvas-default: var(--site-bg);
+  --color-canvas-overlay: var(--site-bg);
+  --color-canvas-subtle: var(--gray-100);
+  --color-canvas-inset: var(--gray-100);
+  --color-fg-default: var(--site-content-fg);
+  --color-fg-muted: var(--site-muted-fg);
+  --color-fg-subtle: var(--site-subtle-fg);
+  --color-border-default: var(--gray-200);
+  --color-border-muted: var(--gray-100);
+
+  --color-segmented-control-bg: var(--gray-200);
+  --color-segmented-control-button-bg: var(--site-bg);
+  --color-segmented-control-button-selected-border: var(--gray-300);
+
+  --color-accent-fg: var(--theme-600);
+  --color-accent-emphasis: var(--theme-700);
+  --color-accent-subtle: var(--theme-100);
+  --color-accent-muted: color-mix(in srgb, var(--theme-400) 40%, transparent);
+
+  --color-btn-text: var(--gray-800);
+  --color-btn-bg: var(--site-button-bg);
+  --color-btn-hover-bg: var(--site-button-hover-bg);
+  --color-btn-primary-text: var(--site-button-accent-fg);
+  --color-btn-primary-bg: var(--site-button-accent-bg);
+  --color-btn-primary-hover-bg: var(--site-button-accent-hover-bg);
+  --color-btn-primary-selected-bg: var(--site-button-accent-active-bg);
+  --color-btn-primary-disabled-text: color-mix(in srgb, var(--theme-900) 50%, transparent);
+  --color-btn-primary-disabled-bg: color-mix(in srgb, var(--theme-200) 60%, transparent);
+
+  --color-btn-border: transparent;
+  --color-btn-hover-border: transparent;
+  --color-btn-active-border: transparent;
+  --color-btn-primary-border: transparent;
+  --color-btn-primary-hover-border: transparent;
+  --color-btn-primary-disabled-border: transparent;
+  --color-btn-primary-selected-shadow: 0 0 transparent;
+
+  --color-btn-shadow: 0 0 transparent;
+  --color-btn-inset-shadow: 0 0 transparent;
+  --color-btn-primary-shadow: 0 0 transparent;
+  --color-btn-primary-inset-shadow: 0 0 transparent;
+  --color-primer-shadow-inset: 0 0 transparent;
+
+  --color-scale-blue-1: var(--theme-200);
+
+  --color-prettylights-syntax-markup-heading: var(--theme-700);
+  --color-prettylights-syntax-constant: var(--theme-600);
+  --color-prettylights-syntax-constant-other-reference-link: var(--theme-700);
+}
+:host,
+html {
+  --umamichi-text-selection-bg: var(--theme-100);
+}
+::selection {
+  background: var(--umamichi-text-selection-bg);
+}
+.gsc-comment-box-textarea,
+.gsc-button {
+  box-shadow: none;
+}
+.gsc-button {
+  border: none;
+}
+:host,
+html {
+  --font-family-sans: var(--font-ui);
+  --font-family-monospace: var(--font-code);
+}
+/* Root type scale aligned with umamichi.moe site-layout.css (--site-content-font-size). */
+:host,
+html {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+@media screen and (min-width: 48rem) {
+  :host,
+  html {
+    font-size: 1.125rem;
+  }
+}
+.gsc-comment-content,
+.gsc-textarea,
+.gsc-header,
+.gsc-comment-author,
+.gsc-reply-author,
+.gsc-comment-box-textarea {
+  font-size: inherit;
+  line-height: inherit;
+}
+/* Umamichi UI layout: sharp rectangles for comment surfaces (not small controls). */
+.gsc-comment-box,
+.gsc-comment-box-tabs,
+.gsc-comment-box-tabs button,
+.gsc-comment-box-main,
+.gsc-comment-box-write,
+.gsc-comment-box-write:focus-within,
+.gsc-comment-box-preview,
+.gsc-comment-box-textarea,
+.gsc-comment-box-textarea-extras,
+.gsc-comment > div,
+.gsc-comment-content,
+.gsc-replies,
+.gsc-reply-box,
+.gsc-reply-box button,
+.gsc-comment-header .rounded-xl,
+.gsc-reply-header .rounded-xl {
+  border-radius: 0 !important;
+}

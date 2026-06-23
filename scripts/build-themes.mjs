@@ -12,6 +12,7 @@ const outDir = path.join(root, 'styles', 'themes');
 const commonCssDistDir = path.dirname(require.resolve('@umamichi-ui/common-css/tokens.css'));
 
 const MODES = ['light', 'dark'];
+const TOKENS_DARK_ARTIFACT = '.build-tokens-dark.css';
 
 const SHARED_IMPORTS = (mode) => `@import "./_umamichi-links.css";
 @import "./_giscus-base-${mode}.css";
@@ -61,11 +62,17 @@ async function readEmbeddedTokensDarkCss() {
 	return adaptTokensDarkForGiscus(raw);
 }
 
+/** @param {string} fileName @param {string} css */
+async function writeBuildArtifact(fileName, css) {
+	await writeFile(path.join(srcDir, fileName), `${css.trim()}\n`);
+	return `./${fileName}`;
+}
+
 /** @param {string} paletteId */
-async function readFlattenedPaletteCss(paletteId) {
+async function writePaletteArtifact(paletteId) {
 	const palettePath = require.resolve(`@umamichi-ui/common-css/palettes/${paletteId}.css`);
 	const raw = await readFile(palettePath, 'utf8');
-	return flattenPaletteSelectors(raw);
+	return writeBuildArtifact(`.build-palette-${paletteId}.css`, flattenPaletteSelectors(raw));
 }
 
 /** @typedef {{ id: string | null, label: string }} PaletteEntry */
@@ -90,22 +97,23 @@ async function loadPalettes() {
 
 /** @param {'light' | 'dark'} mode @param {PaletteEntry} palette */
 async function buildEntryCss(mode, palette) {
-	const paletteBlock =
-		palette.id === null ? '' : `\n${await readFlattenedPaletteCss(palette.id)}\n`;
+	const imports = ['@import "@umamichi-ui/common-css/dist/colors.css";'];
 
 	if (mode === 'light') {
-		return `@import "@umamichi-ui/common-css/dist/colors.css";
-@import "@umamichi-ui/common-css/dist/tokens.css";
-${paletteBlock}${SHARED_IMPORTS(mode)}
-`;
+		imports.push('@import "@umamichi-ui/common-css/dist/tokens.css";');
 	}
 
-	const tokensDark = await readEmbeddedTokensDarkCss();
-	return `@import "@umamichi-ui/common-css/dist/colors.css";
-${paletteBlock}
-${tokensDark}
-${SHARED_IMPORTS(mode)}
-`;
+	if (palette.id !== null) {
+		imports.push(`@import "${await writePaletteArtifact(palette.id)}";`);
+	}
+
+	if (mode === 'dark') {
+		imports.push(`@import "${await writeBuildArtifact(TOKENS_DARK_ARTIFACT, await readEmbeddedTokensDarkCss())}";`);
+	}
+
+	imports.push(SHARED_IMPORTS(mode).trim());
+
+	return `${imports.join('\n')}\n`;
 }
 
 /** @param {'light' | 'dark'} mode @param {string | null} paletteId */

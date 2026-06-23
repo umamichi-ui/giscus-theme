@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.3.1 - 2026-06-18
+
+### Fixed
+
+- 非默认色板与深色主题的 entry 将 palette / `tokens-dark` 写入可 `@import` 的构建产物，避免夹在 `@import` 之间的普通规则导致后续 giscus 层被 PostCSS 丢弃（非 Aqua 主题文件此前缺少 Primer 映射与 chrome）。
+
 ## 0.3.0 - 2026-06-18
 
 ### Added
