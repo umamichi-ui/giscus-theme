@@ -4,7 +4,7 @@
 [![license: LGPL-3.0-or-later + MIT](https://img.shields.io/badge/license-LGPL--3.0--or--later%20%2B%20MIT-blue.svg)](./LICENSE)
 [![CSS](https://img.shields.io/badge/CSS-Giscus%20themes-1572B6?logo=css3)](https://giscus.app/)
 
-> 以下说明性正文由对话中的语言模型生成，未经过人工逐字核对；许可证与第三方归属以 `LICENSE`、`THIRD_PARTY_NOTICES.md` 及上游仓库为准。
+> 本 README 由 Cursor 生成，未经过人工核对，请谨慎对待
 
 面向 Umamichi UI 站点的 [giscus](https://giscus.app/) 评论组件主题包：在 [giscus 上游](https://github.com/giscus/giscus/tree/main/styles/themes) 主题基础上，叠加 **默认 Aqua 色板**（与 [`@umamichi-ui/common-css`](https://www.npmjs.com/package/@umamichi-ui/common-css) 对齐的灰阶与水色 accent）。
 
