@@ -1,8 +1,123 @@
+/* Standalone palette. Import before tokens.css or use styles/core.css. */
+@layer umamichi-colors {
+  :root {
+    /* from https://harmonizer.evilmartians.com/, hue=213. Authoring in oklch; dist/ adds sRGB fallbacks. */
+    --theme-100: rgb(228, 247, 251);
+    --theme-200: rgb(189, 235, 246);
+    --theme-300: rgb(124, 220, 241);
+    --theme-400: rgb(0, 203, 232);
+    --theme-500: rgb(0, 173, 199);
+    --theme-600: rgb(0, 143, 164);
+    --theme-700: rgb(0, 115, 132);
+    --theme-800: rgb(0, 81, 94);
+    --theme-900: rgb(0, 50, 58);
+
+    --gray-100: #f4f4f5;
+    --gray-200: #e4e4e7;
+    --gray-300: #d4d4d8;
+    --gray-400: #a1a1aa;
+    --gray-500: #71717a;
+    --gray-600: #52525b;
+    --gray-700: #3f3f46;
+    --gray-800: #27272a;
+    --gray-900: #18181b;
+  }
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+    --theme-100: oklch(0.962402 0.020313 213);
+    --theme-200: oklch(0.912109 0.05 213);
+    --theme-300: oklch(0.842773 0.095313 213);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+    --theme-400: color(display-p3 0.32314 0.78697 0.90755);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+    --theme-400: oklch(0.772949 0.14375 213);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+    --theme-500: color(display-p3 0.01931 0.68505 0.81817);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+    --theme-500: oklch(0.687866 0.159375 213);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+    --theme-600: color(display-p3 0.02175 0.56307 0.67381);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+    --theme-600: oklch(0.595703 0.1375 213);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+    --theme-700: color(display-p3 0.01678 0.4524 0.54311);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+    --theme-700: oklch(0.508789 0.117188 213);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+    --theme-800: color(display-p3 0.00476 0.31892 0.38609);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+    --theme-800: oklch(0.398437 0.092188 213);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+    --theme-900: color(display-p3 0.00198 0.19694 0.24217);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+    --theme-900: oklch(0.290527 0.067188 213);
+  }
+}
+}
+/* Dark semantic tokens on iframe root (common-css defines these on html.dark). */
+:host,
+html {
+  --site-accent: var(--theme-300);
+  --site-accent-hover: var(--theme-200);
+  --site-accent-soft: color-mix(in srgb, var(--theme-300) 12%, transparent);
+  --site-button-accent-bg: var(--theme-400);
+  --site-button-accent-hover-bg: var(--theme-300);
+  --site-button-accent-active-bg: var(--theme-200);
+  --site-button-accent-fg: var(--theme-900);
+}
 /*! MIT License
  * Copyright (c) 2018 GitHub Inc.
  * https://github.com/primer/primitives/blob/main/LICENSE
  */
-
 main {
   --color-prettylights-syntax-comment: #8b949e;
   --color-prettylights-syntax-constant: #79c0ff;
@@ -89,30 +204,25 @@ main {
   --color-social-reaction-bg-hover: var(--color-scale-gray-7);
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
 }
-
 main .pagination-loader-container {
   background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg");
 }
-
 main .gsc-loading-image {
   background-image: url("https://github.githubassets.com/images/mona-loading-dark.gif");
 }
-
-/* Umamichi default Aqua palette (common-css colors.css + tokens-dark.css). */
-
+/* Map giscus Primer variables to @umamichi-ui/common-css tokens (dark). */
 main {
-  --color-accent-fg: #7cdcf1;
-  --color-accent-emphasis: #00cbe8;
-  --color-accent-subtle: rgb(124 220 241 / 12%);
-  --color-accent-muted: rgb(124 220 241 / 40%);
+  --color-accent-fg: var(--site-accent);
+  --color-accent-emphasis: var(--theme-400);
+  --color-accent-subtle: var(--site-accent-soft);
+  --color-accent-muted: color-mix(in srgb, var(--theme-300) 40%, transparent);
 
-  /* Align with common-css .primary-button (--site-button-accent-* / tokens-dark.css). */
-  --color-btn-primary-text: #00323a;
-  --color-btn-primary-bg: #00cbe8;
-  --color-btn-primary-hover-bg: #7cdcf1;
-  --color-btn-primary-selected-bg: #bdebf6;
-  --color-btn-primary-disabled-text: rgb(0 50 58 / 50%);
-  --color-btn-primary-disabled-bg: rgb(0 203 232 / 60%);
+  --color-btn-primary-text: var(--site-button-accent-fg);
+  --color-btn-primary-bg: var(--site-button-accent-bg);
+  --color-btn-primary-hover-bg: var(--site-button-accent-hover-bg);
+  --color-btn-primary-selected-bg: var(--site-button-accent-active-bg);
+  --color-btn-primary-disabled-text: color-mix(in srgb, var(--theme-900) 50%, transparent);
+  --color-btn-primary-disabled-bg: color-mix(in srgb, var(--theme-400) 60%, transparent);
 
   --color-btn-border: transparent;
   --color-btn-hover-border: transparent;
@@ -128,57 +238,43 @@ main {
   --color-btn-primary-inset-shadow: 0 0 transparent;
   --color-primer-shadow-inset: 0 0 transparent;
 
-  --color-scale-blue-8: #007384;
+  --color-scale-blue-8: var(--theme-700);
 
-  --color-prettylights-syntax-markup-heading: #7cdcf1;
-  --color-prettylights-syntax-constant: #00cbe8;
-  --color-prettylights-syntax-constant-other-reference-link: #7cdcf1;
+  --color-prettylights-syntax-markup-heading: var(--site-accent);
+  --color-prettylights-syntax-constant: var(--theme-400);
+  --color-prettylights-syntax-constant-other-reference-link: var(--site-accent);
 }
-
-/* Text selection: mirrors umamichi.moe html.dark (--site-text-selection-bg / theme-900). */
-
 :host,
 html {
-  --umamichi-text-selection-bg: #00323a;
+  --umamichi-text-selection-bg: var(--theme-900);
 }
-
 ::selection {
   background: var(--umamichi-text-selection-bg);
 }
-
 .gsc-comment-box-textarea,
 .gsc-button {
   box-shadow: none;
 }
-
 .gsc-button {
   border: none;
 }
-
 :host,
 html {
-  --font-family-sans:
-    "Segoe UI Variable", "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont,
-    "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-monospace:
-    "Cascadia Code", "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+  --font-family-sans: var(--font-ui);
+  --font-family-monospace: var(--font-code);
 }
-
 /* Root type scale aligned with umamichi.moe site-layout.css (--site-content-font-size). */
-
 :host,
 html {
   font-size: 1rem;
   line-height: 1.65;
 }
-
 @media screen and (min-width: 48rem) {
   :host,
   html {
     font-size: 1.125rem;
   }
 }
-
 .gsc-comment-content,
 .gsc-textarea,
 .gsc-header,
@@ -188,9 +284,7 @@ html {
   font-size: inherit;
   line-height: inherit;
 }
-
 /* Umamichi UI layout: sharp rectangles for comment surfaces (not small controls). */
-
 .gsc-comment-box,
 .gsc-comment-box-tabs,
 .gsc-comment-box-tabs button,

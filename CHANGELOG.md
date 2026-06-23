@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.2.5 - 2026-06-23
+
+### Changed
+
+- 构建期内联 `@umamichi-ui/common-css` 的 `colors.css` / `tokens.css`；giscus Primer 变量与选区色改为引用 `--theme-*`、`--site-*` 等 token，不再手写 hex。
+
 ## 0.2.4 - 2026-06-23
 
 ### Added

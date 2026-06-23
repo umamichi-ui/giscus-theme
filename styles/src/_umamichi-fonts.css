@@ -1,8 +1,5 @@
 :host,
 html {
-  --font-family-sans:
-    "Segoe UI Variable", "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont,
-    "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-monospace:
-    "Cascadia Code", "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+  --font-family-sans: var(--font-ui);
+  --font-family-monospace: var(--font-code);
 }

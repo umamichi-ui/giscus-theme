@@ -1,18 +1,17 @@
-/* Umamichi default Aqua palette (common-css colors.css + tokens-dark.css). */
+/* Map giscus Primer variables to @umamichi-ui/common-css tokens (dark). */
 
 main {
-  --color-accent-fg: #7cdcf1;
-  --color-accent-emphasis: #00cbe8;
-  --color-accent-subtle: rgb(124 220 241 / 12%);
-  --color-accent-muted: rgb(124 220 241 / 40%);
+  --color-accent-fg: var(--site-accent);
+  --color-accent-emphasis: var(--theme-400);
+  --color-accent-subtle: var(--site-accent-soft);
+  --color-accent-muted: color-mix(in srgb, var(--theme-300) 40%, transparent);
 
-  /* Align with common-css .primary-button (--site-button-accent-* / tokens-dark.css). */
-  --color-btn-primary-text: #00323a;
-  --color-btn-primary-bg: #00cbe8;
-  --color-btn-primary-hover-bg: #7cdcf1;
-  --color-btn-primary-selected-bg: #bdebf6;
-  --color-btn-primary-disabled-text: rgb(0 50 58 / 50%);
-  --color-btn-primary-disabled-bg: rgb(0 203 232 / 60%);
+  --color-btn-primary-text: var(--site-button-accent-fg);
+  --color-btn-primary-bg: var(--site-button-accent-bg);
+  --color-btn-primary-hover-bg: var(--site-button-accent-hover-bg);
+  --color-btn-primary-selected-bg: var(--site-button-accent-active-bg);
+  --color-btn-primary-disabled-text: color-mix(in srgb, var(--theme-900) 50%, transparent);
+  --color-btn-primary-disabled-bg: color-mix(in srgb, var(--theme-400) 60%, transparent);
 
   --color-btn-border: transparent;
   --color-btn-hover-border: transparent;
@@ -28,17 +27,16 @@ main {
   --color-btn-primary-inset-shadow: 0 0 transparent;
   --color-primer-shadow-inset: 0 0 transparent;
 
-  --color-scale-blue-8: #007384;
+  --color-scale-blue-8: var(--theme-700);
 
-  --color-prettylights-syntax-markup-heading: #7cdcf1;
-  --color-prettylights-syntax-constant: #00cbe8;
-  --color-prettylights-syntax-constant-other-reference-link: #7cdcf1;
+  --color-prettylights-syntax-markup-heading: var(--site-accent);
+  --color-prettylights-syntax-constant: var(--theme-400);
+  --color-prettylights-syntax-constant-other-reference-link: var(--site-accent);
 }
 
-/* Text selection: mirrors umamichi.moe html.dark (--site-text-selection-bg / theme-900). */
 :host,
 html {
-  --umamichi-text-selection-bg: #00323a;
+  --umamichi-text-selection-bg: var(--theme-900);
 }
 
 ::selection {

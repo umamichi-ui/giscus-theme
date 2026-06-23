@@ -1,31 +1,30 @@
-/* Umamichi default Aqua palette (common-css colors.css + tokens.css, light). */
+/* Map giscus Primer variables to @umamichi-ui/common-css tokens (light). */
 
 main {
-  --color-canvas-default: #ffffff;
-  --color-canvas-overlay: #ffffff;
-  --color-canvas-subtle: #f4f4f5;
-  --color-canvas-inset: #f4f4f5;
-  --color-fg-default: #3f3f46;
-  --color-fg-muted: #52525b;
-  --color-fg-subtle: #71717a;
-  --color-border-default: #e4e4e7;
-  --color-border-muted: #f4f4f5;
+  --color-canvas-default: var(--site-bg);
+  --color-canvas-overlay: var(--site-bg);
+  --color-canvas-subtle: var(--gray-100);
+  --color-canvas-inset: var(--gray-100);
+  --color-fg-default: var(--site-content-fg);
+  --color-fg-muted: var(--site-muted-fg);
+  --color-fg-subtle: var(--site-subtle-fg);
+  --color-border-default: var(--gray-200);
+  --color-border-muted: var(--gray-100);
 
-  --color-accent-fg: #008fa4;
-  --color-accent-emphasis: #007384;
-  --color-accent-subtle: #e4f7fb;
-  --color-accent-muted: rgb(0 203 232 / 40%);
+  --color-accent-fg: var(--theme-600);
+  --color-accent-emphasis: var(--theme-700);
+  --color-accent-subtle: var(--theme-100);
+  --color-accent-muted: color-mix(in srgb, var(--theme-400) 40%, transparent);
 
-  --color-btn-text: #27272a;
-  --color-btn-bg: #e4e4e7;
-  --color-btn-hover-bg: #d4d4d8;
-  /* Align with common-css .primary-button (--site-button-accent-* / tokens.css). */
-  --color-btn-primary-text: #00323a;
-  --color-btn-primary-bg: #bdebf6;
-  --color-btn-primary-hover-bg: #7cdcf1;
-  --color-btn-primary-selected-bg: #00cbe8;
-  --color-btn-primary-disabled-text: rgb(0 50 58 / 50%);
-  --color-btn-primary-disabled-bg: rgb(189 235 246 / 60%);
+  --color-btn-text: var(--gray-800);
+  --color-btn-bg: var(--site-button-bg);
+  --color-btn-hover-bg: var(--site-button-hover-bg);
+  --color-btn-primary-text: var(--site-button-accent-fg);
+  --color-btn-primary-bg: var(--site-button-accent-bg);
+  --color-btn-primary-hover-bg: var(--site-button-accent-hover-bg);
+  --color-btn-primary-selected-bg: var(--site-button-accent-active-bg);
+  --color-btn-primary-disabled-text: color-mix(in srgb, var(--theme-900) 50%, transparent);
+  --color-btn-primary-disabled-bg: color-mix(in srgb, var(--theme-200) 60%, transparent);
 
   --color-btn-border: transparent;
   --color-btn-hover-border: transparent;
@@ -41,17 +40,16 @@ main {
   --color-btn-primary-inset-shadow: 0 0 transparent;
   --color-primer-shadow-inset: 0 0 transparent;
 
-  --color-scale-blue-1: #bdebf6;
+  --color-scale-blue-1: var(--theme-200);
 
-  --color-prettylights-syntax-markup-heading: #007384;
-  --color-prettylights-syntax-constant: #008fa4;
-  --color-prettylights-syntax-constant-other-reference-link: #007384;
+  --color-prettylights-syntax-markup-heading: var(--theme-700);
+  --color-prettylights-syntax-constant: var(--theme-600);
+  --color-prettylights-syntax-constant-other-reference-link: var(--theme-700);
 }
 
-/* Text selection: mirrors umamichi.moe global.css (--site-text-selection-bg / theme-100). */
 :host,
 html {
-  --umamichi-text-selection-bg: #e4f7fb;
+  --umamichi-text-selection-bg: var(--theme-100);
 }
 
 ::selection {
