@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.2.1 - 2026-06-18
+
+### Added
+
+- 根字号与行高：镜像 umamichi.moe 正文 `--site-content-font-size`（默认 `1rem`，`min-width: 48rem` 为 `1.125rem`）及 `line-height: 1.65`；评论正文、输入框等继承 iframe 根字号。
+
 ## 0.2.0 - 2026-06-18
 
 ### Added

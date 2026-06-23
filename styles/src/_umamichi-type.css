@@ -1,0 +1,24 @@
+/* Root type scale aligned with umamichi.moe site-layout.css (--site-content-font-size). */
+
+:host,
+html {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+@media screen and (min-width: 48rem) {
+  :host,
+  html {
+    font-size: 1.125rem;
+  }
+}
+
+.gsc-comment-content,
+.gsc-textarea,
+.gsc-header,
+.gsc-comment-author,
+.gsc-reply-author,
+.gsc-comment-box-textarea {
+  font-size: inherit;
+  line-height: inherit;
+}
