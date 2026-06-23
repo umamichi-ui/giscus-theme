@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.2.4 - 2026-06-23
+
+### Added
+
+- `::selection` 背景色与 umamichi.moe / common-css 默认 Aqua 色板对齐（浅色 `theme-100`、深色 `theme-900`）。
+
 ## 0.2.3 - 2026-06-23
 
 ### Fixed

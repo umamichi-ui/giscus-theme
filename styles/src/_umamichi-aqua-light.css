@@ -48,6 +48,16 @@ main {
   --color-prettylights-syntax-constant-other-reference-link: #007384;
 }
 
+/* Text selection: mirrors umamichi.moe global.css (--site-text-selection-bg / theme-100). */
+:host,
+html {
+  --umamichi-text-selection-bg: #e4f7fb;
+}
+
+::selection {
+  background: var(--umamichi-text-selection-bg);
+}
+
 .gsc-comment-box-textarea,
 .gsc-button {
   box-shadow: none;

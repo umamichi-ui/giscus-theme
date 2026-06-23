@@ -135,6 +135,17 @@ main {
   --color-prettylights-syntax-constant-other-reference-link: #7cdcf1;
 }
 
+/* Text selection: mirrors umamichi.moe html.dark (--site-text-selection-bg / theme-900). */
+
+:host,
+html {
+  --umamichi-text-selection-bg: #00323a;
+}
+
+::selection {
+  background: var(--umamichi-text-selection-bg);
+}
+
 .gsc-comment-box-textarea,
 .gsc-button {
   box-shadow: none;
