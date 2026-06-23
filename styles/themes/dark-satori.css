@@ -364,6 +364,16 @@ main .gsc-loading-image {
 }
 /* Map giscus Primer variables to @umamichi-ui/common-css tokens (dark). */
 main {
+  --color-canvas-default: var(--site-bg);
+  --color-canvas-overlay: var(--site-bg);
+  --color-canvas-subtle: var(--site-surface-muted);
+  --color-canvas-inset: var(--site-surface-muted);
+  --color-fg-default: var(--site-content-fg);
+  --color-fg-muted: var(--site-muted-fg);
+  --color-fg-subtle: var(--site-subtle-fg);
+  --color-border-default: var(--site-border);
+  --color-border-muted: var(--site-border-soft);
+
   --color-segmented-control-bg: var(--gray-800);
   --color-segmented-control-button-bg: var(--gray-700);
   --color-segmented-control-button-selected-border: var(--gray-600);
@@ -401,7 +411,10 @@ main {
   --color-prettylights-syntax-constant-other-reference-link: var(--site-accent);
 }
 :host,
-html {
+html,
+body {
+  background: var(--site-bg);
+  color: var(--site-fg);
   --umamichi-text-selection-bg: var(--theme-900);
 }
 ::selection {

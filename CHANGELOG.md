@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.3.2 - 2026-06-24
+
+### Fixed
+
+- 深色主题：Primer canvas / 前景 / 边框变量改为引用 `--site-bg`、`--site-surface-muted` 等 common-css token（与浅色 `_umamichi-aqua-light.css` 对称），不再沿用 GitHub 硬编码 `#161b22` 等色；iframe 根 `html` / `body` 设置 `background: var(--site-bg)`，与 umamichi.moe 页面背景一致。
+
 ## 0.3.1 - 2026-06-18
 
 ### Fixed
