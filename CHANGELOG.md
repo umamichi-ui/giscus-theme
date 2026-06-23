@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.2.7 - 2026-06-23
+
+### Changed
+
+- 评论区链接（评论数、「giscus」署名、评论/回复正文与预览区 Markdown）：样式对齐 umamichi.moe 正文链接（`--site-link` / `--site-link-hover`，默认无下划线、hover 下划线）。
+
 ## 0.2.6 - 2026-06-23
 
 ### Fixed

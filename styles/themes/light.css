@@ -322,6 +322,24 @@
     }
   }
 }
+/* Match umamichi.moe article-content link style (--site-link / --site-link-hover). */
+.gsc-comments-count a,
+.gsc-left-header a.link-secondary,
+.gsc-comment-content.markdown a,
+.gsc-reply-content.markdown a,
+.gsc-comment-box-preview.markdown a {
+  color: var(--site-link) !important;
+  text-decoration: none !important;
+  text-underline-offset: 0.15em;
+}
+.gsc-comments-count a:hover,
+.gsc-left-header a.link-secondary:hover,
+.gsc-comment-content.markdown a:hover,
+.gsc-reply-content.markdown a:hover,
+.gsc-comment-box-preview.markdown a:hover {
+  color: var(--site-link-hover) !important;
+  text-decoration: underline !important;
+}
 /*! MIT License
  * Copyright (c) 2018 GitHub Inc.
  * https://github.com/primer/primitives/blob/main/LICENSE
