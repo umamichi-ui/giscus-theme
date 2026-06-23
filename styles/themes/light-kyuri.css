@@ -1,0 +1,356 @@
+/* Standalone palette. Import before tokens.css or use styles/core.css. */
+@layer umamichi-colors {
+  :root {
+    /* from https://harmonizer.evilmartians.com/, hue=213. Authoring in oklch; dist/ adds sRGB fallbacks. */
+    --theme-100: rgb(228, 247, 251);
+    --theme-200: rgb(189, 235, 246);
+    --theme-300: rgb(124, 220, 241);
+    --theme-400: rgb(0, 203, 232);
+    --theme-500: rgb(0, 173, 199);
+    --theme-600: rgb(0, 143, 164);
+    --theme-700: rgb(0, 115, 132);
+    --theme-800: rgb(0, 81, 94);
+    --theme-900: rgb(0, 50, 58);
+
+    --gray-100: #f4f4f5;
+    --gray-200: #e4e4e7;
+    --gray-300: #d4d4d8;
+    --gray-400: #a1a1aa;
+    --gray-500: #71717a;
+    --gray-600: #52525b;
+    --gray-700: #3f3f46;
+    --gray-800: #27272a;
+    --gray-900: #18181b;
+  }
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+    --theme-100: oklch(0.962402 0.020313 213);
+    --theme-200: oklch(0.912109 0.05 213);
+    --theme-300: oklch(0.842773 0.095313 213);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+    --theme-400: color(display-p3 0.32314 0.78697 0.90755);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+    --theme-400: oklch(0.772949 0.14375 213);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+    --theme-500: color(display-p3 0.01931 0.68505 0.81817);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+    --theme-500: oklch(0.687866 0.159375 213);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+    --theme-600: color(display-p3 0.02175 0.56307 0.67381);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+    --theme-600: oklch(0.595703 0.1375 213);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+    --theme-700: color(display-p3 0.01678 0.4524 0.54311);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+    --theme-700: oklch(0.508789 0.117188 213);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+    --theme-800: color(display-p3 0.00476 0.31892 0.38609);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+    --theme-800: oklch(0.398437 0.092188 213);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+    --theme-900: color(display-p3 0.00198 0.19694 0.24217);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+    --theme-900: oklch(0.290527 0.067188 213);
+  }
+}
+}
+/* Import colors.css before this file (see styles/core.css). */
+/* Shared dark-theme custom properties. Keep html.dark and prefers-color-scheme blocks in sync. */
+@layer umamichi-tokens {
+  html.dark {
+    color-scheme: dark;
+
+    --site-bg: #0d1117;
+    --site-surface: var(--site-bg);
+    --site-surface-muted: var(--gray-800);
+    --site-fg: #e6edf3;
+    --site-muted-fg: #8b949e;
+    --site-subtle-fg: #7d8590;
+    --site-content-fg: #c9d1d9;
+    --site-content-muted-fg: #8b949e;
+
+    --site-border: #30363d;
+    --site-border-strong: #30363d;
+    --site-border-soft: #30363d;
+    --site-content-border: #30363d;
+    --site-hover-bg: rgba(177, 186, 196, 0.12);
+    --site-active-bg: rgba(177, 186, 196, 0.2);
+    --site-sidebar-bg: var(--site-bg);
+    --site-sidebar-border: var(--gray-700);
+    --site-header-bg: var(--theme-400);
+    --site-header-fg: var(--theme-900);
+    --site-header-border: var(--site-sidebar-border);
+    --site-nav-active-bg: color-mix(in srgb, var(--theme-400) 20%, transparent);
+
+    --site-accent: var(--theme-300);
+    --site-accent-hover: var(--theme-200);
+    --site-accent-strong: var(--theme-200);
+    --site-accent-soft: color-mix(in srgb, var(--theme-300) 12%, transparent);
+    --site-accent-border: color-mix(in srgb, var(--theme-300) 32%, transparent);
+    --site-link: var(--site-accent);
+    --site-link-hover: var(--site-accent-hover);
+
+    --site-success: #4ade80;
+    --site-success-soft: rgba(22, 101, 52, 0.28);
+    --site-success-border: rgba(74, 222, 128, 0.35);
+    --site-warning: #fcd34d;
+    --site-warning-soft: rgba(245, 158, 11, 0.12);
+    --site-warning-border: rgba(245, 158, 11, 0.35);
+    --site-danger: #fca5a5;
+    --site-danger-soft: rgba(239, 68, 68, 0.14);
+    --site-danger-border: rgba(248, 113, 113, 0.35);
+
+    --site-button-bg: var(--gray-800);
+    --site-button-hover-bg: var(--gray-700);
+    --site-button-active-bg: var(--gray-600);
+    --site-button-fg: var(--site-fg);
+
+    --site-button-accent-bg: var(--theme-400);
+    --site-button-accent-hover-bg: var(--theme-300);
+    --site-button-accent-active-bg: var(--theme-200);
+    --site-button-accent-fg: var(--theme-900);
+
+    --site-backdrop: rgba(1, 4, 9, 0.66);
+    --site-frosted-overlay: color-mix(in srgb, var(--site-bg) 68%, transparent);
+    --site-focus-ring: color-mix(in srgb, var(--site-accent) 28%, transparent);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html:not(.light):not(.dark) {
+      color-scheme: dark;
+
+      --site-bg: #0d1117;
+      --site-surface: var(--site-bg);
+      --site-surface-muted: var(--gray-800);
+      --site-fg: #e6edf3;
+      --site-muted-fg: #8b949e;
+      --site-subtle-fg: #7d8590;
+      --site-content-fg: #c9d1d9;
+      --site-content-muted-fg: #8b949e;
+
+      --site-border: #30363d;
+      --site-border-strong: #30363d;
+      --site-border-soft: #30363d;
+      --site-content-border: #30363d;
+      --site-hover-bg: rgba(177, 186, 196, 0.12);
+      --site-active-bg: rgba(177, 186, 196, 0.2);
+      --site-sidebar-bg: var(--site-bg);
+      --site-sidebar-border: var(--gray-700);
+      --site-header-bg: var(--theme-400);
+      --site-header-fg: var(--theme-900);
+      --site-header-border: var(--site-sidebar-border);
+      --site-nav-active-bg: color-mix(in srgb, var(--theme-400) 20%, transparent);
+
+      --site-accent: var(--theme-300);
+      --site-accent-hover: var(--theme-200);
+      --site-accent-strong: var(--theme-200);
+      --site-accent-soft: color-mix(in srgb, var(--theme-300) 12%, transparent);
+      --site-accent-border: color-mix(in srgb, var(--theme-300) 32%, transparent);
+      --site-link: var(--site-accent);
+      --site-link-hover: var(--site-accent-hover);
+
+      --site-success: #4ade80;
+      --site-success-soft: rgba(22, 101, 52, 0.28);
+      --site-success-border: rgba(74, 222, 128, 0.35);
+      --site-warning: #fcd34d;
+      --site-warning-soft: rgba(245, 158, 11, 0.12);
+      --site-warning-border: rgba(245, 158, 11, 0.35);
+      --site-danger: #fca5a5;
+      --site-danger-soft: rgba(239, 68, 68, 0.14);
+      --site-danger-border: rgba(248, 113, 113, 0.35);
+
+      --site-button-bg: var(--gray-800);
+      --site-button-hover-bg: var(--gray-700);
+      --site-button-active-bg: var(--gray-600);
+      --site-button-fg: var(--site-fg);
+
+      --site-button-accent-bg: var(--theme-400);
+      --site-button-accent-hover-bg: var(--theme-300);
+      --site-button-accent-active-bg: var(--theme-200);
+      --site-button-accent-fg: var(--theme-900);
+
+      --site-backdrop: rgba(1, 4, 9, 0.66);
+      --site-frosted-overlay: color-mix(in srgb, var(--site-bg) 68%, transparent);
+      --site-focus-ring: color-mix(in srgb, var(--site-accent) 28%, transparent);
+    }
+  }
+}
+@layer umamichi-tokens {
+  :root {
+    --font-ui:
+      "Segoe UI Variable", "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont,
+      "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-code: "Cascadia Code", "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+    --site-bg: #ffffff;
+    --site-surface: var(--site-bg);
+    --site-surface-muted: var(--gray-100);
+    --site-fg: var(--gray-800);
+    --site-muted-fg: var(--gray-600);
+    --site-subtle-fg: var(--gray-500);
+    --site-content-fg: var(--gray-700);
+    --site-content-muted-fg: var(--gray-500);
+
+    --site-border: rgba(0, 0, 0, 0.08);
+    --site-border-strong: rgba(0, 0, 0, 0.16);
+    --site-border-soft: var(--gray-100);
+    --site-content-border: var(--gray-100);
+    --site-hover-bg: rgba(0, 0, 0, 0.04);
+    --site-active-bg: rgba(0, 0, 0, 0.08);
+    --site-sidebar-bg: var(--site-bg);
+    --site-sidebar-border: var(--gray-300);
+    --site-header-bg: var(--theme-200);
+    --site-header-fg: var(--theme-900);
+    --site-header-border: var(--site-sidebar-border);
+    --site-nav-active-bg: var(--site-bg);
+    --site-header-offset: 0px;
+
+    --site-accent: var(--theme-500);
+    --site-accent-hover: var(--theme-400);
+    --site-accent-strong: var(--theme-400);
+    --site-accent-soft: var(--theme-100);
+    --site-accent-border: var(--theme-200);
+    --site-link: var(--site-accent);
+    --site-link-hover: var(--site-accent-hover);
+
+    --site-success: #15803d;
+    --site-success-soft: #eefbf1;
+    --site-success-border: #99d7af;
+    --site-warning: #b45309;
+    --site-warning-soft: #fff5e8;
+    --site-warning-border: #f4c489;
+    --site-danger: #b91c1c;
+    --site-danger-soft: #fef0f0;
+    --site-danger-border: #efb4b4;
+
+    /* Solid dim when frosted glass is unavailable or reduced (see --site-frosted-*). */
+    --site-backdrop: rgba(17, 24, 39, 0.5);
+    --site-frosted-blur: 12px;
+    --site-frosted-overlay: color-mix(in srgb, var(--site-surface) 58%, transparent);
+    --site-focus-ring: color-mix(in srgb, var(--site-accent) 22%, transparent);
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-pill: 999px;
+
+    --page-max-width: 56rem;
+    --page-gutter: 16px;
+    --page-padding-top: 28px;
+    --page-padding-bottom: 48px;
+
+    --section-gap: 20px;
+    --inline-gap: 16px;
+    --site-content-font-size: 1rem;
+    --site-content-line-height: 1.75;
+    --control-height: 38px;
+    --control-padding-inline: 12px;
+    --transition-fast: 120ms ease;
+    --transition-overlay: 200ms ease;
+
+    /* 与 umamichi.moe ArticleSourceActions「GitHub 源文件」等 data-site-button 一致；默认档 -200 */
+    --site-button-bg: var(--gray-200);
+    --site-button-hover-bg: var(--gray-300);
+    --site-button-active-bg: var(--gray-400);
+    --site-button-fg: var(--site-fg);
+
+    --site-button-accent-bg: var(--theme-200);
+    --site-button-accent-hover-bg: var(--theme-300);
+    --site-button-accent-active-bg: var(--theme-400);
+    --site-button-accent-fg: var(--theme-900);
+  }
+
+  html.light {
+    color-scheme: light;
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    :root,
+    html.dark,
+    html:not(.light):not(.dark) {
+      --site-frosted-blur: 0px;
+      --site-frosted-overlay: var(--site-backdrop);
+    }
+  }
+}
+/* Optional palette. Import after core.css; set data-palette="kyuri" on <html>. */
+/* @palette
+   label: Kyuri
+   intro: 源于若叶睦（Wakaba Mutsumi）标识色 #779977
+ */
+@layer umamichi-colors {
+  :host, :root {
+    --theme-100: rgb(231, 248, 231);
+    --theme-200: rgb(198, 238, 198);
+    --theme-300: rgb(149, 224, 151);
+    --theme-400: rgb(95, 209, 103);
+    --theme-500: rgb(81, 180, 88);
+    --theme-600: rgb(66, 148, 72);
+    --theme-700: rgb(52, 119, 57);
+    --theme-800: rgb(34, 84, 38);
+    --theme-900: rgb(19, 53, 22);
+  }
+
+@supports (color: oklab(0% 0 0%)) {
+:host, :root {
+    --theme-100: oklch(0.961914 0.028125 145);
+    --theme-200: oklch(0.909668 0.067188 145);
+    --theme-300: oklch(0.838867 0.125 145);
+    --theme-400: oklch(0.769043 0.178125 145);
+    --theme-500: oklch(0.689453 0.159375 145);
+    --theme-600: oklch(0.597656 0.1375 145);
+    --theme-700: oklch(0.510742 0.117188 145);
+    --theme-800: oklch(0.400391 0.092188 145);
+    --theme-900: oklch(0.293945 0.067188 145);
+  }
+}
+}

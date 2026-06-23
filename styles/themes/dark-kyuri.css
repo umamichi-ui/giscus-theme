@@ -103,6 +103,38 @@
   }
 }
 }
+/* Optional palette. Import after core.css; set data-palette="kyuri" on <html>. */
+/* @palette
+   label: Kyuri
+   intro: 源于若叶睦（Wakaba Mutsumi）标识色 #779977
+ */
+@layer umamichi-colors {
+  :host, :root {
+    --theme-100: rgb(231, 248, 231);
+    --theme-200: rgb(198, 238, 198);
+    --theme-300: rgb(149, 224, 151);
+    --theme-400: rgb(95, 209, 103);
+    --theme-500: rgb(81, 180, 88);
+    --theme-600: rgb(66, 148, 72);
+    --theme-700: rgb(52, 119, 57);
+    --theme-800: rgb(34, 84, 38);
+    --theme-900: rgb(19, 53, 22);
+  }
+
+@supports (color: oklab(0% 0 0%)) {
+:host, :root {
+    --theme-100: oklch(0.961914 0.028125 145);
+    --theme-200: oklch(0.909668 0.067188 145);
+    --theme-300: oklch(0.838867 0.125 145);
+    --theme-400: oklch(0.769043 0.178125 145);
+    --theme-500: oklch(0.689453 0.159375 145);
+    --theme-600: oklch(0.597656 0.1375 145);
+    --theme-700: oklch(0.510742 0.117188 145);
+    --theme-800: oklch(0.400391 0.092188 145);
+    --theme-900: oklch(0.293945 0.067188 145);
+  }
+}
+}
 /* Shared dark-theme custom properties. Keep :host, :root and prefers-color-scheme blocks in sync. */
 @layer umamichi-tokens {
   :host, :root {

@@ -103,6 +103,77 @@
   }
 }
 }
+/* Optional palette. Import after core.css; set data-palette="satori" on <html>. */
+/* @palette
+   label: Satori
+   intro: 源于南京地铁 S3 号线标识色 #ba84ac；名 Satori 取自东方 Project 角色古明地さとり（Komeiji Satori）
+ */
+@layer umamichi-colors {
+  :host, :root {
+    --theme-100: rgb(255, 239, 250);
+    --theme-200: rgb(255, 217, 245);
+    --theme-300: rgb(255, 186, 237);
+    --theme-400: rgb(255, 151, 231);
+    --theme-500: rgb(227, 124, 204);
+    --theme-600: rgb(187, 102, 168);
+    --theme-700: rgb(151, 81, 136);
+    --theme-800: rgb(108, 56, 96);
+    --theme-900: rgb(69, 34, 61);
+  }
+
+@supports (color: color(display-p3 0 0 0%)) {
+:host, :root {
+    --theme-100: color(display-p3 0.99885 0.93365 0.98537);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:host, :root {
+    --theme-100: oklch(0.968018 0.029688 336);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:host, :root {
+    --theme-200: color(display-p3 0.99807 0.84249 0.96803);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:host, :root {
+    --theme-200: oklch(0.925781 0.071875 336);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:host, :root {
+    --theme-300: color(display-p3 0.99923 0.7087 0.9492);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:host, :root {
+    --theme-300: oklch(0.868652 0.135938 336);
+  }
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:host, :root {
+    --theme-400: color(display-p3 0.96699 0.58875 0.90764);
+  }
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:host, :root {
+    --theme-400: oklch(0.80957 0.178125 336);
+    --theme-500: oklch(0.725586 0.159375 336);
+    --theme-600: oklch(0.628906 0.1375 336);
+    --theme-700: oklch(0.537109 0.117188 336);
+    --theme-800: oklch(0.421387 0.092188 336);
+    --theme-900: oklch(0.308594 0.067188 336);
+  }
+}
+}
 /* Shared dark-theme custom properties. Keep :host, :root and prefers-color-scheme blocks in sync. */
 @layer umamichi-tokens {
   :host, :root {

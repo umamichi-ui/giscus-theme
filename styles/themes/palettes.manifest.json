@@ -1,0 +1,53 @@
+{
+  "defaultPalette": null,
+  "themes": [
+    {
+      "mode": "light",
+      "palette": null,
+      "label": "Aqua",
+      "file": "light.css"
+    },
+    {
+      "mode": "dark",
+      "palette": null,
+      "label": "Aqua",
+      "file": "dark.css"
+    },
+    {
+      "mode": "light",
+      "palette": "kyuri",
+      "label": "Kyuri",
+      "file": "light-kyuri.css"
+    },
+    {
+      "mode": "dark",
+      "palette": "kyuri",
+      "label": "Kyuri",
+      "file": "dark-kyuri.css"
+    },
+    {
+      "mode": "light",
+      "palette": "satori",
+      "label": "Satori",
+      "file": "light-satori.css"
+    },
+    {
+      "mode": "dark",
+      "palette": "satori",
+      "label": "Satori",
+      "file": "dark-satori.css"
+    },
+    {
+      "mode": "light",
+      "palette": "yukari",
+      "label": "Yukari",
+      "file": "light-yukari.css"
+    },
+    {
+      "mode": "dark",
+      "palette": "yukari",
+      "label": "Yukari",
+      "file": "dark-yukari.css"
+    }
+  ]
+}

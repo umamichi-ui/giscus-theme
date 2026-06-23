@@ -1,6 +1,6 @@
 {
   "name": "@umamichi-ui/giscus-theme",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "description": "Giscus widget themes aligned with Umamichi UI (default Aqua palette).",
   "type": "module",
   "license": "(LGPL-3.0-or-later AND MIT)",
@@ -29,7 +29,14 @@
   },
   "exports": {
     "./light.css": "./styles/themes/light.css",
-    "./dark.css": "./styles/themes/dark.css"
+    "./dark.css": "./styles/themes/dark.css",
+    "./light-kyuri.css": "./styles/themes/light-kyuri.css",
+    "./dark-kyuri.css": "./styles/themes/dark-kyuri.css",
+    "./light-satori.css": "./styles/themes/light-satori.css",
+    "./dark-satori.css": "./styles/themes/dark-satori.css",
+    "./light-yukari.css": "./styles/themes/light-yukari.css",
+    "./dark-yukari.css": "./styles/themes/dark-yukari.css",
+    "./palettes.manifest.json": "./styles/themes/palettes.manifest.json"
   },
   "sideEffects": [
     "*.css"

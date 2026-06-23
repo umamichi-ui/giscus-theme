@@ -2,6 +2,18 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.3.0 - 2026-06-18
+
+### Added
+
+- 构建脚本读取 `@umamichi-ui/common-css` 的 `palettes.json`，为默认 Aqua 与 kyuri / satori / yukari 各生成浅色、深色共 8 个单文件主题（`light.css`、`dark.css`、`light-{id}.css`、`dark-{id}.css`）。
+- 输出 `palettes.manifest.json`，供消费方枚举可用主题文件。
+- 非默认色板在构建期将 `common-css` palette 中的 `:root[data-palette]` 平铺为 `:host, :root`，以便 giscus iframe 内无需 `data-palette` 属性，且能覆盖 `colors.css` 默认水色阶。
+
+### Changed
+
+- 深色语义 token 改为构建期读取 `common-css` 的 `tokens-dark.css`，将 `html.dark` 改写为 `:host, :root` 并去掉 `prefers-color-scheme` 块；删除 `_umamichi-tokens-*.css` 与构建脚本内的手写 token 常量。
+
 ## 0.2.9 - 2026-06-23
 
 ### Changed
