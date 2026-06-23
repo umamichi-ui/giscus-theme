@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.2.3 - 2026-06-23
+
+### Fixed
+
+- 评论直角：扩展 `_umamichi-chrome.css` 选择器，覆盖 tab 区、focus 父容器、评论卡片内层 `rounded-md`、折叠回复按钮等 giscus/Tailwind 仍保留圆角的节点。
+
 ## 0.2.2 - 2026-06-23
 
 ### Changed
