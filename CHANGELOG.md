@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.2.8 - 2026-06-23
+
+### Changed
+
+- 评论日期链接与「退出登录」按钮：样式对齐 umamichi.moe 正文链接。
+
 ## 0.2.7 - 2026-06-23
 
 ### Changed
