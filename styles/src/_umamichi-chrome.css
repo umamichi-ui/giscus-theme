@@ -1,0 +1,9 @@
+/* Umamichi UI layout: sharp rectangles for comment surfaces (not small controls). */
+
+.gsc-comment-box,
+.gsc-comment-box-main,
+.gsc-comment-box-textarea,
+.gsc-comment,
+.gsc-reply-box {
+  border-radius: 0 !important;
+}

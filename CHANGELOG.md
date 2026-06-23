@@ -2,6 +2,13 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.2.2 - 2026-06-23
+
+### Changed
+
+- 主按钮（Comment / Sign in 等）：填充色与 `@umamichi-ui/common-css` `.primary-button`（`--site-button-accent-*`）对齐；去除边框与阴影相关 Primer 变量。
+- 评论输入区与评论卡片：`.gsc-comment-box`、`.gsc-comment` 等使用无圆角矩形（`border-radius: 0`）。
+
 ## 0.2.1 - 2026-06-18
 
 ### Added

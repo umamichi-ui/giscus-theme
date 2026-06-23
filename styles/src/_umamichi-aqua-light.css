@@ -19,11 +19,21 @@ main {
   --color-btn-text: #27272a;
   --color-btn-bg: #e4e4e7;
   --color-btn-hover-bg: #d4d4d8;
-  --color-btn-primary-text: #ffffff;
-  --color-btn-primary-bg: #008fa4;
-  --color-btn-primary-hover-bg: #00adc7;
-  --color-btn-primary-selected-bg: #007384;
-  --color-btn-primary-disabled-bg: rgb(0 143 164 / 60%);
+  /* Align with common-css .primary-button (--site-button-accent-* / tokens.css). */
+  --color-btn-primary-text: #00323a;
+  --color-btn-primary-bg: #bdebf6;
+  --color-btn-primary-hover-bg: #7cdcf1;
+  --color-btn-primary-selected-bg: #00cbe8;
+  --color-btn-primary-disabled-text: rgb(0 50 58 / 50%);
+  --color-btn-primary-disabled-bg: rgb(189 235 246 / 60%);
+
+  --color-btn-border: transparent;
+  --color-btn-hover-border: transparent;
+  --color-btn-active-border: transparent;
+  --color-btn-primary-border: transparent;
+  --color-btn-primary-hover-border: transparent;
+  --color-btn-primary-disabled-border: transparent;
+  --color-btn-primary-selected-shadow: 0 0 transparent;
 
   --color-btn-shadow: 0 0 transparent;
   --color-btn-inset-shadow: 0 0 transparent;
@@ -41,4 +51,8 @@ main {
 .gsc-comment-box-textarea,
 .gsc-button {
   box-shadow: none;
+}
+
+.gsc-button {
+  border: none;
 }

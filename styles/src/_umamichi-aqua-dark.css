@@ -6,11 +6,21 @@ main {
   --color-accent-subtle: rgb(124 220 241 / 12%);
   --color-accent-muted: rgb(124 220 241 / 40%);
 
+  /* Align with common-css .primary-button (--site-button-accent-* / tokens-dark.css). */
   --color-btn-primary-text: #00323a;
   --color-btn-primary-bg: #00cbe8;
   --color-btn-primary-hover-bg: #7cdcf1;
-  --color-btn-primary-selected-bg: #00adc7;
+  --color-btn-primary-selected-bg: #bdebf6;
+  --color-btn-primary-disabled-text: rgb(0 50 58 / 50%);
   --color-btn-primary-disabled-bg: rgb(0 203 232 / 60%);
+
+  --color-btn-border: transparent;
+  --color-btn-hover-border: transparent;
+  --color-btn-active-border: transparent;
+  --color-btn-primary-border: transparent;
+  --color-btn-primary-hover-border: transparent;
+  --color-btn-primary-disabled-border: transparent;
+  --color-btn-primary-selected-shadow: 0 0 transparent;
 
   --color-btn-shadow: 0 0 transparent;
   --color-btn-inset-shadow: 0 0 transparent;
@@ -28,4 +38,8 @@ main {
 .gsc-comment-box-textarea,
 .gsc-button {
   box-shadow: none;
+}
+
+.gsc-button {
+  border: none;
 }
