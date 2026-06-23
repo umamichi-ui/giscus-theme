@@ -1,6 +1,10 @@
 /* Map giscus Primer variables to @umamichi-ui/common-css tokens (dark). */
 
 main {
+  --color-segmented-control-bg: var(--gray-800);
+  --color-segmented-control-button-bg: var(--gray-700);
+  --color-segmented-control-button-selected-border: var(--gray-600);
+
   --color-accent-fg: var(--site-accent);
   --color-accent-emphasis: var(--theme-400);
   --color-accent-subtle: var(--site-accent-soft);

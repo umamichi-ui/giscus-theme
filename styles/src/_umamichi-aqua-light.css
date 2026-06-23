@@ -11,6 +11,10 @@ main {
   --color-border-default: var(--gray-200);
   --color-border-muted: var(--gray-100);
 
+  --color-segmented-control-bg: var(--gray-200);
+  --color-segmented-control-button-bg: var(--site-bg);
+  --color-segmented-control-button-selected-border: var(--gray-300);
+
   --color-accent-fg: var(--theme-600);
   --color-accent-emphasis: var(--theme-700);
   --color-accent-subtle: var(--theme-100);

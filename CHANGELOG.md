@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.2.9 - 2026-06-23
+
+### Changed
+
+- 评论排序「最早 / 最新」分段开关：背景改为 common-css 纯灰阶（浅色 `gray-200` / `gray-300`，深色 `gray-800` / `gray-700`）。
+
 ## 0.2.8 - 2026-06-23
 
 ### Changed
