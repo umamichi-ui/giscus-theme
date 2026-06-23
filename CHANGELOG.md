@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.2.6 - 2026-06-23
+
+### Fixed
+
+- 评论作者身份标签（如「所有者」）：去除 `rounded-xl` 圆角，改为直角矩形。
+
 ## 0.2.5 - 2026-06-23
 
 ### Changed

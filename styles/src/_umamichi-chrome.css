@@ -13,6 +13,8 @@
 .gsc-comment-content,
 .gsc-replies,
 .gsc-reply-box,
-.gsc-reply-box button {
+.gsc-reply-box button,
+.gsc-comment-header .rounded-xl,
+.gsc-reply-header .rounded-xl {
   border-radius: 0 !important;
 }
