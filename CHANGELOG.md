@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.5.3 - 2026-06-24
+
+### Changed
+
+- 笑脸弹出触发按钮改为与「表情+数量」胶囊同高的正圆按钮（`--gsc-reaction-pill-height`）。
+
 ## 0.5.2 - 2026-06-24
 
 ### Changed

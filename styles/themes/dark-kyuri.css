@@ -651,7 +651,9 @@ html {
 /* Reactions — article-tag / site-button look */
 .gsc-comment-reactions,
 .gsc-reply-reactions,
-.gsc-direct-reaction-buttons {
+.gsc-direct-reaction-buttons,
+.gsc-reactions-menu {
+  --gsc-reaction-pill-height: calc(0.5rem + 1.225rem); /* tag padding + 0.875rem × line-height 1.4 */
   gap: 0.5rem !important;
 }
 .gsc-social-reaction-summary-item {
@@ -660,7 +662,7 @@ html {
   justify-content: center !important;
   gap: 0.125rem !important;
   height: auto !important;
-  min-height: 0 !important;
+  min-height: var(--gsc-reaction-pill-height) !important;
   line-height: 1.4 !important;
   padding: 0.25rem 0.75rem !important;
   border: none !important;
@@ -694,19 +696,28 @@ html {
   display: inline-flex !important;
   align-items: center !important;
 }
+/* Smiley trigger: circle matching emoji+count pill height */
+.gsc-reactions-button.gsc-social-reaction-summary-item {
+  width: var(--gsc-reaction-pill-height) !important;
+  height: var(--gsc-reaction-pill-height) !important;
+  min-width: var(--gsc-reaction-pill-height) !important;
+  min-height: var(--gsc-reaction-pill-height) !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  flex-shrink: 0 !important;
+}
 .gsc-reactions-button {
-  width: auto !important;
-  height: auto !important;
-  min-height: 0 !important;
-  padding: 0.25rem 0.75rem !important;
-  border: none !important;
-  border-radius: 9999px !important;
   font-size: 0.875rem !important;
   background: var(--site-button-bg) !important;
   color: var(--site-button-fg) !important;
   transition:
     background-color 0.2s ease,
     color 0.2s ease !important;
+}
+.gsc-reactions-button svg {
+  width: 1rem !important;
+  height: 1rem !important;
+  flex-shrink: 0 !important;
 }
 .gsc-reactions-button:hover,
 .gsc-reactions-button.popover-only:hover {
