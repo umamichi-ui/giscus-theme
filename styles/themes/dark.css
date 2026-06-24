@@ -382,11 +382,9 @@ html {
   font-size: inherit;
   line-height: inherit;
 }
-/* Umamichi UI layout: sharp rectangles for comment card surfaces (not inputs or controls). */
+/* Umamichi UI layout: sharp rectangles for comment card surfaces (not the editor chrome). */
 .gsc-comment-box,
-.gsc-comment-box-tabs,
 .gsc-comment-box-main,
-.gsc-comment-box-textarea-extras,
 .gsc-comment > div,
 .gsc-comment-content,
 .gsc-replies,
@@ -395,12 +393,20 @@ html {
 .gsc-reply-header .rounded-xl {
   border-radius: 0 !important;
 }
-/* Text inputs: match @umamichi-ui/common-css forms.css / njmetro .text-input */
+/* Write / Preview tabs: only top corners rounded. */
+.gsc-comment-box-tabs {
+  border-radius: 0 !important;
+}
+.gsc-comment-box-tabs button {
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important;
+}
+/* Editor shell: bottom corners rounded; pairs with tabs above. */
 .gsc-comment-box-write {
   border: 1px solid var(--site-border) !important;
-  border-radius: var(--radius-sm) !important;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
   background: var(--site-bg) !important;
   outline: none;
+  overflow: hidden;
   transition: border-color var(--transition-fast);
 }
 .gsc-comment-box-write:hover {
@@ -410,21 +416,44 @@ html {
   border-color: var(--site-accent) !important;
   outline: 2px solid var(--site-focus-ring) !important;
   outline-offset: 1px;
-  border-radius: var(--radius-sm) !important;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
+  box-shadow: none !important;
 }
+/* Text area: flat bottom edge; divider before the toolbar row. */
+.gsc-comment-box-textarea {
+  border: none !important;
+  border-bottom: 1px solid var(--site-border) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+.gsc-comment-box-textarea:focus,
+.gsc-comment-box-textarea:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+/* Markdown toolbar row: inherits bottom corner radius of the editor. */
+.gsc-comment-box-textarea-extras {
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
+}
+/* Preview pane matches the write shell geometry. */
 .gsc-comment-box-preview {
   border: 1px solid var(--site-border) !important;
-  border-radius: var(--radius-sm) !important;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
   background: var(--site-bg) !important;
 }
-.gsc-comment-box-textarea {
-  background: transparent !important;
+/* Action buttons: match common-css .primary-button / .secondary-button (--radius-sm). */
+.gsc-comment-box-bottom .gsc-button,
+.gsc-reply-box .gsc-button {
   border-radius: var(--radius-sm) !important;
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 0.92rem;
 }
-/* Buttons and tabs: match common-css button radius (--radius-sm). */
-.gsc-button,
-.gsc-comment-box-tabs button,
-.gsc-reply-box button,
-.gsc-left-header button {
-  border-radius: var(--radius-sm) !important;
+.gsc-reply-box .gsc-button:not(.btn-primary) {
+  background: var(--site-button-bg) !important;
+  color: var(--site-button-fg) !important;
+}
+.gsc-reply-box .gsc-button:not(.btn-primary):hover {
+  background: var(--site-button-hover-bg) !important;
+  color: var(--site-button-fg) !important;
 }

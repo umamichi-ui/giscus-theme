@@ -2,6 +2,14 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.4.1 - 2026-06-24
+
+### Fixed
+
+- 评论编辑器：Write/Preview 选项卡仅上方两角圆角；文本区与 Markdown 工具条分段（直线分隔），合起来仅下方两角圆角。
+- 操作按钮（评论 / 回复 / 取消 / 登录 GitHub）圆角与尺寸对齐 common-css 按钮；取消按钮使用 secondary 填充。
+- 聚焦光晕仅由 `--site-focus-ring` 绘制，去除 textarea 上 Primer/Tailwind 额外 box-shadow。
+
 ## 0.4.0 - 2026-06-24
 
 ### Changed
