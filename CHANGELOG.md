@@ -2,6 +2,13 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.5.2 - 2026-06-24
+
+### Changed
+
+- 反应胶囊与「+」按钮改为博文 tag（`--site-button-*`）实心胶囊样式；已反应态使用 accent 按钮色。
+- 表情选择 popover 去掉圆角。
+
 ## 0.5.1 - 2026-06-24
 
 ### Fixed

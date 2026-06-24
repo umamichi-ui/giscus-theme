@@ -625,30 +625,74 @@ html {
   line-height: inherit;
 }
 /* Override giscus base.css fixed-pixel sizes (bundled in the widget). */
-/* Reactions */
+/* Reactions — article-tag / site-button look */
+.gsc-comment-reactions,
+.gsc-reply-reactions,
+.gsc-direct-reaction-buttons {
+  gap: 0.5rem !important;
+}
 .gsc-social-reaction-summary-item {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 0.125rem !important;
   height: auto !important;
-  min-height: 1.625rem !important;
-  line-height: 1 !important;
-  padding-inline: 0.375rem !important;
-  font-size: inherit !important;
+  min-height: 0 !important;
+  line-height: 1.4 !important;
+  padding: 0.25rem 0.75rem !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  background: var(--site-button-bg) !important;
+  color: var(--site-button-fg) !important;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease !important;
+}
+.gsc-social-reaction-summary-item:hover:enabled {
+  background: var(--site-button-hover-bg) !important;
+  color: var(--site-button-fg) !important;
+}
+.gsc-social-reaction-summary-item.has-reacted {
+  background: var(--site-button-accent-bg) !important;
+  color: var(--site-button-accent-fg) !important;
+  border: none !important;
+}
+.gsc-social-reaction-summary-item.has-reacted:hover:enabled {
+  background: var(--site-button-accent-hover-bg) !important;
+  color: var(--site-button-accent-fg) !important;
 }
 .gsc-social-reaction-summary-item-count {
   max-width: 6.25rem !important;
   margin-inline-start: 0 !important;
   font-size: inherit !important;
-  line-height: 1 !important;
+  line-height: inherit !important;
   display: inline-flex !important;
   align-items: center !important;
 }
 .gsc-reactions-button {
-  width: 1.625rem !important;
-  height: 1.625rem !important;
-  font-size: inherit !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 0.25rem 0.75rem !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  font-size: 0.875rem !important;
+  background: var(--site-button-bg) !important;
+  color: var(--site-button-fg) !important;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease !important;
+}
+.gsc-reactions-button:hover,
+.gsc-reactions-button.popover-only:hover {
+  background: var(--site-button-hover-bg) !important;
+  color: var(--site-button-fg) !important;
+}
+.gsc-reactions-button.popover-only {
+  border: none !important;
+  background: var(--site-button-bg) !important;
 }
 .gsc-direct-reaction-button-emoji {
   width: 1rem !important;
@@ -665,8 +709,15 @@ html {
 }
 /* Upvote is always disabled in giscus; base.css strips padding (p-0). */
 .gsc-upvote-button:disabled {
-  padding-inline: 0.375rem !important;
+  padding: 0.25rem 0.75rem !important;
+  border: none !important;
+  background: var(--site-button-bg) !important;
+  color: var(--site-button-fg) !important;
   cursor: default !important;
+}
+.gsc-upvote-button.has-reacted:disabled {
+  background: var(--site-button-accent-bg) !important;
+  color: var(--site-button-accent-fg) !important;
 }
 .gsc-emoji-button {
   width: 2rem !important;
@@ -674,6 +725,7 @@ html {
 }
 .gsc-reactions-popover {
   width: 9.125rem !important;
+  border-radius: 0 !important;
 }
 /* Comment editor */
 .gsc-comment-box-textarea {
