@@ -19,55 +19,39 @@
   border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important;
 }
 
-/* Main comment editor shell: border on .gsc-comment-box-write only (not the whole form). */
-.gsc-comment-box:not(.gsc-comment-box-is-reply) .gsc-comment-box-write {
+/* Editor outer shell: square gray border; inner textarea + toolbar form the rounded block. */
+.gsc-comment-box-write {
   border: 1px solid var(--site-border) !important;
-  border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
+  border-radius: 0 !important;
   background: var(--site-bg) !important;
   outline: none;
-  overflow: hidden;
+  overflow: visible;
+  padding: 6px;
+  box-sizing: border-box;
   transition: border-color var(--transition-fast);
 }
 
-.gsc-comment-box:not(.gsc-comment-box-is-reply) .gsc-comment-box-write:hover {
+.gsc-comment-box-write:hover {
   border-color: var(--site-border-strong) !important;
 }
 
-.gsc-comment-box:not(.gsc-comment-box-is-reply) .gsc-comment-box-write:focus-within {
+.gsc-comment-box-write:focus-within {
   border-color: var(--site-accent) !important;
   outline: 2px solid var(--site-focus-ring) !important;
   outline-offset: 1px;
+  border-radius: 0 !important;
   box-shadow: none !important;
 }
 
-/* Reply editor: full corner radius on the write shell. */
-.gsc-comment-box-is-reply .gsc-comment-box-write {
-  border: 1px solid var(--site-border) !important;
-  border-radius: var(--radius-sm) !important;
-  background: var(--site-bg) !important;
-  outline: none;
-  overflow: hidden;
-  transition: border-color var(--transition-fast);
-}
-
-.gsc-comment-box-is-reply .gsc-comment-box-write:hover {
-  border-color: var(--site-border-strong) !important;
-}
-
-.gsc-comment-box-is-reply .gsc-comment-box-write:focus-within {
-  border-color: var(--site-accent) !important;
-  outline: 2px solid var(--site-focus-ring) !important;
-  outline-offset: 1px;
-  border-radius: var(--radius-sm) !important;
-  box-shadow: none !important;
-}
-
-/* Text area: rounded top; flat bottom with divider before toolbar. */
+/* Inner text field: top half of the rounded composite. */
 .gsc-comment-box-textarea {
-  border: none !important;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--site-border) !important;
   border-bottom: 1px solid var(--site-border) !important;
   border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important;
-  background: transparent !important;
+  background: var(--site-bg) !important;
   box-shadow: none !important;
 }
 
@@ -77,23 +61,20 @@
   box-shadow: none !important;
 }
 
-/* Markdown toolbar row: bottom corners of the editor block. */
+/* Inner toolbar row: bottom half of the rounded composite. */
 .gsc-comment-box-textarea-extras {
-  border: none !important;
+  box-sizing: border-box;
+  border: 1px solid var(--site-border) !important;
+  border-top: none !important;
   border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
+  background: var(--site-bg) !important;
   box-shadow: none !important;
 }
 
-/* Preview pane (below tabs, same slot as write). */
-.gsc-comment-box:not(.gsc-comment-box-is-reply) .gsc-comment-box-preview {
+/* Preview pane (below tabs, same slot as write): square outer border only. */
+.gsc-comment-box-preview {
   border: 1px solid var(--site-border) !important;
-  border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
-  background: var(--site-bg) !important;
-}
-
-.gsc-comment-box-is-reply .gsc-comment-box-preview {
-  border: 1px solid var(--site-border) !important;
-  border-radius: var(--radius-sm) !important;
+  border-radius: 0 !important;
   background: var(--site-bg) !important;
 }
 
@@ -144,7 +125,7 @@
 }
 
 .gsc-reply-box .gsc-comment-box .btn:not(.btn-primary):hover,
-.gsc-reply-box .gsc-comment-box .btn:not(.btn-primary):hover {
+.gsc-reply-box .gsc-comment-box .gsc-button:not(.btn-primary):hover {
   background: var(--site-button-hover-bg) !important;
   color: var(--site-button-fg) !important;
 }

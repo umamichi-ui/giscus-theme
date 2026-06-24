@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.4.4 - 2026-06-24
+
+### Fixed
+
+- 编辑矩形外框（`.gsc-comment-box-write` / preview）改为直角灰线；内层 `textarea` + Markdown 工具条以独立边框拼成圆角矩形（中间直线分隔）。
+
 ## 0.4.3 - 2026-06-24
 
 ### Fixed
