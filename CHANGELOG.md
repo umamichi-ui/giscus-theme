@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.4.8 - 2026-06-24
+
+### Fixed
+
+- 深色主题构建同时内联 `tokens.css`，补齐 `--radius-sm`、`--control-height`、`--transition-fast` 等基础 token，修复暗黑模式下圆角与控件尺寸失效。
+
 ## 0.4.7 - 2026-06-24
 
 ### Fixed

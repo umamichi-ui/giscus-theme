@@ -99,9 +99,7 @@ async function loadPalettes() {
 async function buildEntryCss(mode, palette) {
 	const imports = ['@import "@umamichi-ui/common-css/dist/colors.css";'];
 
-	if (mode === 'light') {
-		imports.push('@import "@umamichi-ui/common-css/dist/tokens.css";');
-	}
+	imports.push('@import "@umamichi-ui/common-css/dist/tokens.css";');
 
 	if (palette.id !== null) {
 		imports.push(`@import "${await writePaletteArtifact(palette.id)}";`);
