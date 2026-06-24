@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.5.1 - 2026-06-24
+
+### Fixed
+
+- 反应胶囊恢复 `font-size: inherit` 与 flex 居中；emoji/向上箭头固定 `1rem`；恢复禁用 upvote 按钮内边距，修复图标过小与数量不居中。
+
 ## 0.5.0 - 2026-06-24
 
 ### Changed

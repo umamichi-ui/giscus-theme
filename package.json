@@ -1,6 +1,6 @@
 {
   "name": "@umamichi-ui/giscus-theme",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Giscus widget themes aligned with Umamichi UI (default Aqua palette).",
   "type": "module",
   "license": "(LGPL-3.0-or-later AND MIT)",
