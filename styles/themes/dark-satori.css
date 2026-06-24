@@ -651,6 +651,15 @@ html {
   --font-family-sans: var(--font-ui);
   --font-family-monospace: var(--font-code);
 }
+/* Rem-based sizing so controls track iframe root font-size (_umamichi-type.css). */
+:host,
+:root {
+  --radius-sm: 0.625rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --control-height: 2.375rem;
+  --control-padding-inline: 0.75rem;
+}
 /* Root type scale aligned with umamichi.moe site-layout.css (--site-content-font-size). */
 :host,
 html {
@@ -668,9 +677,68 @@ html {
 .gsc-header,
 .gsc-comment-author,
 .gsc-reply-author,
-.gsc-comment-box-textarea {
+.gsc-comment-box-textarea,
+.gsc-comment-footer,
+.gsc-reply-footer,
+.gsc-comment-reactions,
+.gsc-reply-reactions,
+.gsc-social-reaction-summary-item {
   font-size: inherit;
   line-height: inherit;
+}
+/* Override giscus base.css fixed-pixel sizes (bundled in the widget). */
+/* Reactions */
+.gsc-social-reaction-summary-item {
+  height: auto !important;
+  min-height: 1.625rem !important;
+  line-height: 1.4 !important;
+  padding-inline: 0.25rem !important;
+  font-size: 0.75rem !important;
+}
+.gsc-social-reaction-summary-item-count {
+  max-width: 6.25rem !important;
+  margin-inline-start: 0.125rem !important;
+  font-size: inherit !important;
+}
+.gsc-reactions-button {
+  width: 1.625rem !important;
+  height: 1.625rem !important;
+  font-size: 0.75rem !important;
+}
+.gsc-direct-reaction-button-emoji {
+  width: 1em !important;
+  height: 1em !important;
+}
+.gsc-emoji-button {
+  width: 2rem !important;
+  height: 2rem !important;
+}
+.gsc-reactions-popover {
+  width: 9.125rem !important;
+}
+/* Comment editor */
+.gsc-comment-box-textarea {
+  min-height: 6.25rem !important;
+  max-height: 31.25rem !important;
+}
+.gsc-comment-box-textarea-extras {
+  padding-block: 0.4375rem !important;
+}
+.gsc-comment-box-preview {
+  min-height: 8.1875rem !important;
+}
+.gsc-comment-box-bottom .btn,
+.gsc-comment-box-bottom .gsc-button {
+  padding-block: 0.3125rem !important;
+}
+/* Reply timeline */
+.gsc-tl-line {
+  width: 0.125rem !important;
+  left: 1.875rem !important;
+}
+.gsc-reply:first-child > .gsc-tl-line {
+  top: 1rem !important;
+  height: calc(100% - 1rem) !important;
 }
 /* Umamichi UI layout: sharp rectangles for comment card surfaces (not the editor chrome). */
 .gsc-comment-box,
@@ -790,7 +858,7 @@ html {
 .gsc-reply-box > button {
   width: 100%;
   min-height: var(--control-height);
-  padding: 7px var(--control-padding-inline) !important;
+  padding: 0.4375rem var(--control-padding-inline) !important;
   border: 1px solid var(--site-border) !important;
   border-radius: var(--radius-sm) !important;
   background: var(--site-bg) !important;
@@ -817,8 +885,8 @@ html {
 .gsc-reply-box .gsc-comment-box .gsc-button,
 .gsc-reply-box .gsc-comment-box .rounded-md {
   border-radius: var(--radius-sm) !important;
-  min-height: 34px;
-  padding: 0 12px;
+  min-height: 2.125rem;
+  padding: 0 0.75rem;
   font-size: 0.92rem;
   box-shadow: none !important;
 }

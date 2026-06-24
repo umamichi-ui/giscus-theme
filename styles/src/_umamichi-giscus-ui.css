@@ -1,0 +1,66 @@
+/* Override giscus base.css fixed-pixel sizes (bundled in the widget). */
+
+/* Reactions */
+.gsc-social-reaction-summary-item {
+  height: auto !important;
+  min-height: 1.625rem !important;
+  line-height: 1.4 !important;
+  padding-inline: 0.25rem !important;
+  font-size: 0.75rem !important;
+}
+
+.gsc-social-reaction-summary-item-count {
+  max-width: 6.25rem !important;
+  margin-inline-start: 0.125rem !important;
+  font-size: inherit !important;
+}
+
+.gsc-reactions-button {
+  width: 1.625rem !important;
+  height: 1.625rem !important;
+  font-size: 0.75rem !important;
+}
+
+.gsc-direct-reaction-button-emoji {
+  width: 1em !important;
+  height: 1em !important;
+}
+
+.gsc-emoji-button {
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+.gsc-reactions-popover {
+  width: 9.125rem !important;
+}
+
+/* Comment editor */
+.gsc-comment-box-textarea {
+  min-height: 6.25rem !important;
+  max-height: 31.25rem !important;
+}
+
+.gsc-comment-box-textarea-extras {
+  padding-block: 0.4375rem !important;
+}
+
+.gsc-comment-box-preview {
+  min-height: 8.1875rem !important;
+}
+
+.gsc-comment-box-bottom .btn,
+.gsc-comment-box-bottom .gsc-button {
+  padding-block: 0.3125rem !important;
+}
+
+/* Reply timeline */
+.gsc-tl-line {
+  width: 0.125rem !important;
+  left: 1.875rem !important;
+}
+
+.gsc-reply:first-child > .gsc-tl-line {
+  top: 1rem !important;
+  height: calc(100% - 1rem) !important;
+}

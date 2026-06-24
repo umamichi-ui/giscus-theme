@@ -18,7 +18,12 @@ html {
 .gsc-header,
 .gsc-comment-author,
 .gsc-reply-author,
-.gsc-comment-box-textarea {
+.gsc-comment-box-textarea,
+.gsc-comment-footer,
+.gsc-reply-footer,
+.gsc-comment-reactions,
+.gsc-reply-reactions,
+.gsc-social-reaction-summary-item {
   font-size: inherit;
   line-height: inherit;
 }

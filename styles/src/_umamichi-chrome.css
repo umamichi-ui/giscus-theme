@@ -134,7 +134,7 @@
 .gsc-reply-box > button {
   width: 100%;
   min-height: var(--control-height);
-  padding: 7px var(--control-padding-inline) !important;
+  padding: 0.4375rem var(--control-padding-inline) !important;
   border: 1px solid var(--site-border) !important;
   border-radius: var(--radius-sm) !important;
   background: var(--site-bg) !important;
@@ -164,8 +164,8 @@
 .gsc-reply-box .gsc-comment-box .gsc-button,
 .gsc-reply-box .gsc-comment-box .rounded-md {
   border-radius: var(--radius-sm) !important;
-  min-height: 34px;
-  padding: 0 12px;
+  min-height: 2.125rem;
+  padding: 0 0.75rem;
   font-size: 0.92rem;
   box-shadow: none !important;
 }

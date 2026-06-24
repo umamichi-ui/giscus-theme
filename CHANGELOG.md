@@ -2,6 +2,13 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.5.0 - 2026-06-24
+
+### Changed
+
+- 圆角与控件尺寸 token 改为 `rem`，随 iframe 根字号（`1rem` / `1.125rem`）缩放。
+- 覆盖 giscus 反应胶囊、编辑区最小高度、时间线等内置固定 `px` 尺寸。
+
 ## 0.4.9 - 2026-06-24
 
 ### Fixed

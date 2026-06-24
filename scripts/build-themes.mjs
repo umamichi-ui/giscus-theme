@@ -18,7 +18,9 @@ const SHARED_IMPORTS = (mode) => `@import "./_umamichi-links.css";
 @import "./_giscus-base-${mode}.css";
 @import "./_umamichi-aqua-${mode}.css";
 @import "./_umamichi-fonts.css";
+@import "./_umamichi-scale-tokens.css";
 @import "./_umamichi-type.css";
+@import "./_umamichi-giscus-ui.css";
 @import "./_umamichi-chrome.css";`;
 
 /** @param {string} css @param {RegExp} selector */
