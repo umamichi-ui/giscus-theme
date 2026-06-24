@@ -431,8 +431,12 @@ html {
 .gsc-comment-box-tabs button {
   border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important;
 }
-/* Editor outer shell: square gray border; inner textarea + toolbar form the rounded block. */
+/*
+ * Editor shell: square outer gray border; ::after draws one inset rounded frame
+ * around textarea + toolbar. Focus ring stays on the inner frame only.
+ */
 .gsc-comment-box-write {
+  position: relative;
   border: 1px solid var(--site-border) !important;
   border-radius: 0 !important;
   background: var(--site-bg) !important;
@@ -442,25 +446,41 @@ html {
   box-sizing: border-box;
   transition: border-color var(--transition-fast);
 }
+.gsc-comment-box-write::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid var(--site-border);
+  border-radius: var(--radius-sm);
+  pointer-events: none;
+  box-sizing: border-box;
+  transition: border-color var(--transition-fast);
+}
 .gsc-comment-box-write:hover {
   border-color: var(--site-border-strong) !important;
 }
+.gsc-comment-box-write:hover::after {
+  border-color: var(--site-border-strong);
+}
 .gsc-comment-box-write:focus-within {
-  border-color: var(--site-accent) !important;
-  outline: 2px solid var(--site-focus-ring) !important;
-  outline-offset: 1px;
-  border-radius: 0 !important;
+  border-color: var(--site-border-strong) !important;
+  outline: none !important;
   box-shadow: none !important;
 }
-/* Inner text field: top half of the rounded composite. */
+.gsc-comment-box-write:focus-within::after {
+  border-color: var(--site-accent);
+  outline: 2px solid var(--site-focus-ring);
+  outline-offset: 1px;
+}
+/* Text area + toolbar: divider only; perimeter comes from ::after. */
 .gsc-comment-box-textarea {
   display: block;
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid var(--site-border) !important;
+  border: none !important;
   border-bottom: 1px solid var(--site-border) !important;
   border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important;
-  background: var(--site-bg) !important;
+  background: transparent !important;
   box-shadow: none !important;
 }
 .gsc-comment-box-textarea:focus,
@@ -468,13 +488,14 @@ html {
   outline: none !important;
   box-shadow: none !important;
 }
-/* Inner toolbar row: bottom half of the rounded composite. */
 .gsc-comment-box-textarea-extras {
-  box-sizing: border-box;
-  border: 1px solid var(--site-border) !important;
-  border-top: none !important;
+  border: none !important;
   border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
-  background: var(--site-bg) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.gsc-comment-box-textarea.form-control,
+.gsc-comment-box-textarea-extras.form-control {
   box-shadow: none !important;
 }
 /* Preview pane (below tabs, same slot as write): square outer border only. */

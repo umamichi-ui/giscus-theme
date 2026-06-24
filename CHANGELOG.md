@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.4.5 - 2026-06-24
+
+### Fixed
+
+- 回退 0.4.4 双层边框方案，恢复 0.4.3 单层编辑壳；外框 `.gsc-comment-box-write` 为直角灰线，`::after` 伪元素绘制内嵌圆角矩形，`:focus-within` 光晕仅作用于内层圆角框。
+
 ## 0.4.4 - 2026-06-24
 
 ### Fixed
