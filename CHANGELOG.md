@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.4.6 - 2026-06-24
+
+### Fixed
+
+- 去掉 `.gsc-comment-box-write` 外层灰框与 `padding`，仅保留 `::after` 圆角矩形；整表 `.gsc-comment-box`（含 tab、提交区）外轮廓强制直角，覆盖 giscus `rounded-md` 小圆角。
+
 ## 0.4.5 - 2026-06-24
 
 ### Fixed

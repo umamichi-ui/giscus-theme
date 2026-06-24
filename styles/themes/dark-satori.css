@@ -454,7 +454,9 @@ html {
   line-height: inherit;
 }
 /* Umamichi UI layout: sharp rectangles for comment card surfaces (not the editor chrome). */
+.gsc-comment-box,
 .gsc-comment-box-main,
+.gsc-comment-box-bottom,
 .gsc-comment > div,
 .gsc-comment-content,
 .gsc-replies,
@@ -471,45 +473,38 @@ html {
   border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important;
 }
 /*
- * Editor shell: square outer gray border; ::after draws one inset rounded frame
- * around textarea + toolbar. Focus ring stays on the inner frame only.
+ * Textarea + toolbar: one rounded rectangle via ::after (no outer gray wrapper).
  */
 .gsc-comment-box-write {
   position: relative;
-  border: 1px solid var(--site-border) !important;
-  border-radius: 0 !important;
-  background: var(--site-bg) !important;
+  border: none !important;
+  padding: 0 !important;
+  background: transparent !important;
   outline: none;
   overflow: visible;
-  padding: 6px;
   box-sizing: border-box;
-  transition: border-color var(--transition-fast);
 }
 .gsc-comment-box-write::after {
   content: '';
   position: absolute;
-  inset: 6px;
+  inset: 0;
   border: 1px solid var(--site-border);
   border-radius: var(--radius-sm);
   pointer-events: none;
   box-sizing: border-box;
   transition: border-color var(--transition-fast);
 }
-.gsc-comment-box-write:hover {
-  border-color: var(--site-border-strong) !important;
-}
 .gsc-comment-box-write:hover::after {
   border-color: var(--site-border-strong);
-}
-.gsc-comment-box-write:focus-within {
-  border-color: var(--site-border-strong) !important;
-  outline: none !important;
-  box-shadow: none !important;
 }
 .gsc-comment-box-write:focus-within::after {
   border-color: var(--site-accent);
   outline: 2px solid var(--site-focus-ring);
   outline-offset: 1px;
+}
+.gsc-comment-box-write:focus-within {
+  outline: none !important;
+  box-shadow: none !important;
 }
 /* Text area + toolbar: divider only; perimeter comes from ::after. */
 .gsc-comment-box-textarea {
@@ -519,7 +514,7 @@ html {
   border: none !important;
   border-bottom: 1px solid var(--site-border) !important;
   border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important;
-  background: transparent !important;
+  background: var(--site-bg) !important;
   box-shadow: none !important;
 }
 .gsc-comment-box-textarea:focus,
@@ -530,12 +525,18 @@ html {
 .gsc-comment-box-textarea-extras {
   border: none !important;
   border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
-  background: transparent !important;
+  background: var(--site-bg) !important;
   box-shadow: none !important;
 }
 .gsc-comment-box-textarea.form-control,
 .gsc-comment-box-textarea-extras.form-control {
   box-shadow: none !important;
+}
+.gsc-comment-box-textarea.form-control {
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important;
+}
+.gsc-comment-box-textarea-extras.form-control {
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
 }
 /* Preview pane (below tabs, same slot as write): square outer border only. */
 .gsc-comment-box-preview {
