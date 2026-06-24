@@ -2,6 +2,14 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.4.2 - 2026-06-24
+
+### Fixed
+
+- 主评论框：外层统一 `border-radius: --radius-sm`，文本区上方两角圆角；聚焦光晕挂在整框 `:focus-within`。
+- 折叠态「写回复」按钮：样式对齐 common-css `.text-input`（含 `--site-focus-ring`）。
+- 评论 / 回复 / 取消 / 登录按钮：覆盖 giscus `.btn` / `.rounded-md`，使用 `--radius-sm`（10px）。
+
 ## 0.4.1 - 2026-06-24
 
 ### Fixed

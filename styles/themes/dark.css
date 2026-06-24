@@ -383,7 +383,6 @@ html {
   line-height: inherit;
 }
 /* Umamichi UI layout: sharp rectangles for comment card surfaces (not the editor chrome). */
-.gsc-comment-box,
 .gsc-comment-box-main,
 .gsc-comment > div,
 .gsc-comment-content,
@@ -393,6 +392,23 @@ html {
 .gsc-reply-header .rounded-xl {
   border-radius: 0 !important;
 }
+/* Top-level comment editor: one bordered shell (tabs + write / preview). */
+.gsc-comment-box:not(.gsc-comment-box-is-reply) {
+  border: 1px solid var(--site-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--site-bg);
+  transition: border-color var(--transition-fast);
+}
+.gsc-comment-box:not(.gsc-comment-box-is-reply):hover {
+  border-color: var(--site-border-strong);
+}
+.gsc-comment-box:not(.gsc-comment-box-is-reply):focus-within {
+  border-color: var(--site-accent);
+  outline: 2px solid var(--site-focus-ring);
+  outline-offset: 1px;
+  box-shadow: none !important;
+}
 /* Write / Preview tabs: only top corners rounded. */
 .gsc-comment-box-tabs {
   border-radius: 0 !important;
@@ -400,30 +416,44 @@ html {
 .gsc-comment-box-tabs button {
   border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important;
 }
-/* Editor shell: bottom corners rounded; pairs with tabs above. */
-.gsc-comment-box-write {
+/* Inner write shell inside the top-level editor (border on parent). */
+.gsc-comment-box:not(.gsc-comment-box-is-reply) .gsc-comment-box-write {
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  outline: none;
+  overflow: hidden;
+}
+.gsc-comment-box:not(.gsc-comment-box-is-reply) .gsc-comment-box-write:hover,
+.gsc-comment-box:not(.gsc-comment-box-is-reply) .gsc-comment-box-write:focus-within {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+/* Reply editor (no tabs): own bordered shell with full corner radius. */
+.gsc-comment-box-is-reply .gsc-comment-box-write {
   border: 1px solid var(--site-border) !important;
-  border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
+  border-radius: var(--radius-sm) !important;
   background: var(--site-bg) !important;
   outline: none;
   overflow: hidden;
   transition: border-color var(--transition-fast);
 }
-.gsc-comment-box-write:hover {
+.gsc-comment-box-is-reply .gsc-comment-box-write:hover {
   border-color: var(--site-border-strong) !important;
 }
-.gsc-comment-box-write:focus-within {
+.gsc-comment-box-is-reply .gsc-comment-box-write:focus-within {
   border-color: var(--site-accent) !important;
   outline: 2px solid var(--site-focus-ring) !important;
   outline-offset: 1px;
-  border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
+  border-radius: var(--radius-sm) !important;
   box-shadow: none !important;
 }
-/* Text area: flat bottom edge; divider before the toolbar row. */
+/* Text area: rounded top; flat bottom with divider before toolbar. */
 .gsc-comment-box-textarea {
   border: none !important;
   border-bottom: 1px solid var(--site-border) !important;
-  border-radius: 0 !important;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important;
   background: transparent !important;
 }
 .gsc-comment-box-textarea:focus,
@@ -431,28 +461,63 @@ html {
   outline: none !important;
   box-shadow: none !important;
 }
-/* Markdown toolbar row: inherits bottom corner radius of the editor. */
+/* Markdown toolbar row: bottom corners of the editor block. */
 .gsc-comment-box-textarea-extras {
   border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
 }
-/* Preview pane matches the write shell geometry. */
-.gsc-comment-box-preview {
+/* Preview pane */
+.gsc-comment-box:not(.gsc-comment-box-is-reply) .gsc-comment-box-preview {
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+.gsc-comment-box-is-reply .gsc-comment-box-preview {
   border: 1px solid var(--site-border) !important;
-  border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
+  border-radius: var(--radius-sm) !important;
   background: var(--site-bg) !important;
 }
-/* Action buttons: match common-css .primary-button / .secondary-button (--radius-sm). */
+/* Collapsed “write a reply” trigger: match common-css .text-input. */
+.gsc-reply-box > button:only-child {
+  width: 100%;
+  min-height: var(--control-height);
+  padding: 7px var(--control-padding-inline);
+  border: 1px solid var(--site-border) !important;
+  border-radius: var(--radius-sm) !important;
+  background: var(--site-bg) !important;
+  color: var(--site-muted-fg);
+  text-align: left;
+  box-shadow: none !important;
+  transition: border-color var(--transition-fast);
+}
+.gsc-reply-box > button:only-child:hover {
+  border-color: var(--site-border-strong) !important;
+}
+.gsc-reply-box > button:only-child:focus,
+.gsc-reply-box > button:only-child:focus-visible {
+  border-color: var(--site-accent) !important;
+  outline: 2px solid var(--site-focus-ring) !important;
+  outline-offset: 1px;
+  box-shadow: none !important;
+}
+/* Action buttons: override giscus .btn / .rounded-md (6px) → common-css --radius-sm (10px). */
+.gsc-comment-box-bottom .btn,
 .gsc-comment-box-bottom .gsc-button,
-.gsc-reply-box .gsc-button {
+.gsc-comment-box-bottom .rounded-md,
+.gsc-reply-box .btn,
+.gsc-reply-box .gsc-button,
+.gsc-reply-box .rounded-md {
   border-radius: var(--radius-sm) !important;
   min-height: 34px;
   padding: 0 12px;
   font-size: 0.92rem;
+  box-shadow: none !important;
 }
+.gsc-reply-box .btn:not(.btn-primary),
 .gsc-reply-box .gsc-button:not(.btn-primary) {
   background: var(--site-button-bg) !important;
   color: var(--site-button-fg) !important;
 }
+.gsc-reply-box .btn:not(.btn-primary):hover,
 .gsc-reply-box .gsc-button:not(.btn-primary):hover {
   background: var(--site-button-hover-bg) !important;
   color: var(--site-button-fg) !important;
