@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.4.7 - 2026-06-24
+
+### Fixed
+
+- 恢复 `--color-canvas-subtle` / `--color-canvas-inset` 为 `--site-surface-muted`，评论内代码块等 inset 区域恢复灰底；输入框仍由 `_umamichi-chrome.css` 显式使用 `--site-bg`。
+
 ## 0.4.6 - 2026-06-24
 
 ### Fixed

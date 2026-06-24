@@ -327,8 +327,8 @@ main .gsc-loading-image {
 main {
   --color-canvas-default: var(--site-bg);
   --color-canvas-overlay: var(--site-bg);
-  --color-canvas-subtle: var(--site-bg);
-  --color-canvas-inset: var(--site-bg);
+  --color-canvas-subtle: var(--site-surface-muted);
+  --color-canvas-inset: var(--site-surface-muted);
   --color-fg-default: var(--site-content-fg);
   --color-fg-muted: var(--site-muted-fg);
   --color-fg-subtle: var(--site-subtle-fg);
