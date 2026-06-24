@@ -2,6 +2,13 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.4.3 - 2026-06-24
+
+### Fixed
+
+- 撤销对 `.gsc-comment-box`（整表 form）的输入框边框与 `:focus-within`；编辑矩形边框仅挂在 `.gsc-comment-box-write` / `.gsc-comment-box-preview`，tab 与「评论」按钮不再被包进文本框样式。
+- 去除 giscus `form-control` 在 textarea-extras 上的多余边框；折叠「写回复」选择器改为 `.gsc-reply-box > button`。
+
 ## 0.4.2 - 2026-06-24
 
 ### Fixed
