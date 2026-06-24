@@ -2,6 +2,13 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.4.0 - 2026-06-24
+
+### Changed
+
+- 评论输入区：圆角、hover 边框与 focus ring 对齐 `@umamichi-ui/common-css` `forms.css`（njmetro `.text-input`）；Primer `--color-canvas-inset` / `--color-canvas-subtle` 改为 `--site-bg`，输入框内不再使用灰色底。
+- 主按钮、Write/Preview 选项卡、排序 segmented control 等控件圆角改为 `--radius-sm`，与 common-css 按钮一致；评论卡片等大表面仍为直角。
+
 ## 0.3.2 - 2026-06-24
 
 ### Fixed

@@ -421,8 +421,8 @@ main .gsc-loading-image {
 main {
   --color-canvas-default: var(--site-bg);
   --color-canvas-overlay: var(--site-bg);
-  --color-canvas-subtle: var(--site-surface-muted);
-  --color-canvas-inset: var(--site-surface-muted);
+  --color-canvas-subtle: var(--site-bg);
+  --color-canvas-inset: var(--site-bg);
   --color-fg-default: var(--site-content-fg);
   --color-fg-muted: var(--site-muted-fg);
   --color-fg-subtle: var(--site-subtle-fg);
@@ -508,22 +508,49 @@ html {
   font-size: inherit;
   line-height: inherit;
 }
-/* Umamichi UI layout: sharp rectangles for comment surfaces (not small controls). */
+/* Umamichi UI layout: sharp rectangles for comment card surfaces (not inputs or controls). */
 .gsc-comment-box,
 .gsc-comment-box-tabs,
-.gsc-comment-box-tabs button,
 .gsc-comment-box-main,
-.gsc-comment-box-write,
-.gsc-comment-box-write:focus-within,
-.gsc-comment-box-preview,
-.gsc-comment-box-textarea,
 .gsc-comment-box-textarea-extras,
 .gsc-comment > div,
 .gsc-comment-content,
 .gsc-replies,
 .gsc-reply-box,
-.gsc-reply-box button,
 .gsc-comment-header .rounded-xl,
 .gsc-reply-header .rounded-xl {
   border-radius: 0 !important;
+}
+/* Text inputs: match @umamichi-ui/common-css forms.css / njmetro .text-input */
+.gsc-comment-box-write {
+  border: 1px solid var(--site-border) !important;
+  border-radius: var(--radius-sm) !important;
+  background: var(--site-bg) !important;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+.gsc-comment-box-write:hover {
+  border-color: var(--site-border-strong) !important;
+}
+.gsc-comment-box-write:focus-within {
+  border-color: var(--site-accent) !important;
+  outline: 2px solid var(--site-focus-ring) !important;
+  outline-offset: 1px;
+  border-radius: var(--radius-sm) !important;
+}
+.gsc-comment-box-preview {
+  border: 1px solid var(--site-border) !important;
+  border-radius: var(--radius-sm) !important;
+  background: var(--site-bg) !important;
+}
+.gsc-comment-box-textarea {
+  background: transparent !important;
+  border-radius: var(--radius-sm) !important;
+}
+/* Buttons and tabs: match common-css button radius (--radius-sm). */
+.gsc-button,
+.gsc-comment-box-tabs button,
+.gsc-reply-box button,
+.gsc-left-header button {
+  border-radius: var(--radius-sm) !important;
 }
