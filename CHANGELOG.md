@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.4.9 - 2026-06-24
+
+### Fixed
+
+- 评论卡片与编辑外壳显式使用 `--site-bg`，去掉 `color-bg-secondary` 带来的灰底；Markdown 代码块仍保留 `--site-surface-muted`。
+
 ## 0.4.8 - 2026-06-24
 
 ### Fixed
