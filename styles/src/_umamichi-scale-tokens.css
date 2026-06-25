@@ -7,4 +7,26 @@
   --radius-lg: 1.25rem;
   --control-height: 2.375rem;
   --control-padding-inline: 0.75rem;
+
+  /*
+   * umamichi.moe .article-tag uses document-root rem (html stays 1rem).
+   * Counteract iframe type scale (_umamichi-type.css @ 48rem) so reaction pills
+   * match article tags at every viewport width.
+   */
+  --gsc-site-root-rem-factor: 1;
+  --gsc-article-tag-font-size: calc(0.875rem / var(--gsc-site-root-rem-factor));
+  --gsc-article-tag-padding-block: calc(0.25rem / var(--gsc-site-root-rem-factor));
+  --gsc-article-tag-padding-inline: calc(0.75rem / var(--gsc-site-root-rem-factor));
+  --gsc-article-tag-line-height: 1.65;
+  --gsc-article-tag-gap: calc(0.5rem / var(--gsc-site-root-rem-factor));
+  --gsc-reaction-pill-height: calc(
+    (0.5rem + 0.875rem * var(--gsc-article-tag-line-height)) / var(--gsc-site-root-rem-factor)
+  );
+}
+
+@media screen and (min-width: 48rem) {
+  :host,
+  :root {
+    --gsc-site-root-rem-factor: 1.125;
+  }
 }

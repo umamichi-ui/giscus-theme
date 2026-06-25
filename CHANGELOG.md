@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.5.4 - 2026-06-25
+
+### Fixed
+
+- 反应胶囊与笑脸按钮对齐 umamichi.moe `.article-tag`：行高改为 `1.65`，并通过 `--gsc-site-root-rem-factor` 抵消 iframe 根字号在 `≥48rem` 的放大，移动端与桌面端均与博文标签同高。
+
 ## 0.5.3 - 2026-06-24
 
 ### Changed

@@ -5,8 +5,7 @@
 .gsc-reply-reactions,
 .gsc-direct-reaction-buttons,
 .gsc-reactions-menu {
-  --gsc-reaction-pill-height: calc(0.5rem + 1.225rem); /* tag padding + 0.875rem × line-height 1.4 */
-  gap: 0.5rem !important;
+  gap: var(--gsc-article-tag-gap) !important;
 }
 
 .gsc-social-reaction-summary-item {
@@ -16,11 +15,11 @@
   gap: 0.125rem !important;
   height: auto !important;
   min-height: var(--gsc-reaction-pill-height) !important;
-  line-height: 1.4 !important;
-  padding: 0.25rem 0.75rem !important;
+  line-height: var(--gsc-article-tag-line-height) !important;
+  padding: var(--gsc-article-tag-padding-block) var(--gsc-article-tag-padding-inline) !important;
   border: none !important;
   border-radius: 9999px !important;
-  font-size: 0.875rem !important;
+  font-size: var(--gsc-article-tag-font-size) !important;
   font-weight: 400 !important;
   background: var(--site-button-bg) !important;
   color: var(--site-button-fg) !important;
@@ -66,7 +65,7 @@
 }
 
 .gsc-reactions-button {
-  font-size: 0.875rem !important;
+  font-size: var(--gsc-article-tag-font-size) !important;
   background: var(--site-button-bg) !important;
   color: var(--site-button-fg) !important;
   transition:
@@ -75,8 +74,8 @@
 }
 
 .gsc-reactions-button svg {
-  width: 1rem !important;
-  height: 1rem !important;
+  width: 1em !important;
+  height: 1em !important;
   flex-shrink: 0 !important;
 }
 
@@ -92,8 +91,8 @@
 }
 
 .gsc-direct-reaction-button-emoji {
-  width: 1rem !important;
-  height: 1rem !important;
+  width: 1em !important;
+  height: 1em !important;
   flex-shrink: 0 !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -108,7 +107,7 @@
 
 /* Upvote is always disabled in giscus; base.css strips padding (p-0). */
 .gsc-upvote-button:disabled {
-  padding: 0.25rem 0.75rem !important;
+  padding: var(--gsc-article-tag-padding-block) var(--gsc-article-tag-padding-inline) !important;
   border: none !important;
   background: var(--site-button-bg) !important;
   color: var(--site-button-fg) !important;

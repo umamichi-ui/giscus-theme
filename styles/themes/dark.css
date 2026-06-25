@@ -588,6 +588,27 @@ html {
   --radius-lg: 1.25rem;
   --control-height: 2.375rem;
   --control-padding-inline: 0.75rem;
+
+  /*
+   * umamichi.moe .article-tag uses document-root rem (html stays 1rem).
+   * Counteract iframe type scale (_umamichi-type.css @ 48rem) so reaction pills
+   * match article tags at every viewport width.
+   */
+  --gsc-site-root-rem-factor: 1;
+  --gsc-article-tag-font-size: calc(0.875rem / var(--gsc-site-root-rem-factor));
+  --gsc-article-tag-padding-block: calc(0.25rem / var(--gsc-site-root-rem-factor));
+  --gsc-article-tag-padding-inline: calc(0.75rem / var(--gsc-site-root-rem-factor));
+  --gsc-article-tag-line-height: 1.65;
+  --gsc-article-tag-gap: calc(0.5rem / var(--gsc-site-root-rem-factor));
+  --gsc-reaction-pill-height: calc(
+    (0.5rem + 0.875rem * var(--gsc-article-tag-line-height)) / var(--gsc-site-root-rem-factor)
+  );
+}
+@media screen and (min-width: 48rem) {
+  :host,
+  :root {
+    --gsc-site-root-rem-factor: 1.125;
+  }
 }
 /* Root type scale aligned with umamichi.moe site-layout.css (--site-content-font-size). */
 :host,
@@ -621,8 +642,7 @@ html {
 .gsc-reply-reactions,
 .gsc-direct-reaction-buttons,
 .gsc-reactions-menu {
-  --gsc-reaction-pill-height: calc(0.5rem + 1.225rem); /* tag padding + 0.875rem × line-height 1.4 */
-  gap: 0.5rem !important;
+  gap: var(--gsc-article-tag-gap) !important;
 }
 .gsc-social-reaction-summary-item {
   display: inline-flex !important;
@@ -631,11 +651,11 @@ html {
   gap: 0.125rem !important;
   height: auto !important;
   min-height: var(--gsc-reaction-pill-height) !important;
-  line-height: 1.4 !important;
-  padding: 0.25rem 0.75rem !important;
+  line-height: var(--gsc-article-tag-line-height) !important;
+  padding: var(--gsc-article-tag-padding-block) var(--gsc-article-tag-padding-inline) !important;
   border: none !important;
   border-radius: 9999px !important;
-  font-size: 0.875rem !important;
+  font-size: var(--gsc-article-tag-font-size) !important;
   font-weight: 400 !important;
   background: var(--site-button-bg) !important;
   color: var(--site-button-fg) !important;
@@ -675,7 +695,7 @@ html {
   flex-shrink: 0 !important;
 }
 .gsc-reactions-button {
-  font-size: 0.875rem !important;
+  font-size: var(--gsc-article-tag-font-size) !important;
   background: var(--site-button-bg) !important;
   color: var(--site-button-fg) !important;
   transition:
@@ -683,8 +703,8 @@ html {
     color 0.2s ease !important;
 }
 .gsc-reactions-button svg {
-  width: 1rem !important;
-  height: 1rem !important;
+  width: 1em !important;
+  height: 1em !important;
   flex-shrink: 0 !important;
 }
 .gsc-reactions-button:hover,
@@ -697,8 +717,8 @@ html {
   background: var(--site-button-bg) !important;
 }
 .gsc-direct-reaction-button-emoji {
-  width: 1rem !important;
-  height: 1rem !important;
+  width: 1em !important;
+  height: 1em !important;
   flex-shrink: 0 !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -711,7 +731,7 @@ html {
 }
 /* Upvote is always disabled in giscus; base.css strips padding (p-0). */
 .gsc-upvote-button:disabled {
-  padding: 0.25rem 0.75rem !important;
+  padding: var(--gsc-article-tag-padding-block) var(--gsc-article-tag-padding-inline) !important;
   border: none !important;
   background: var(--site-button-bg) !important;
   color: var(--site-button-fg) !important;
