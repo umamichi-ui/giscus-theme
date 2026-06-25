@@ -12,6 +12,7 @@ const outDir = path.join(root, 'styles', 'themes');
 const commonCssDistDir = path.dirname(require.resolve('@umamichi-ui/common-css/tokens.css'));
 
 const MODES = ['light', 'dark'];
+const TOKENS_LIGHT_ARTIFACT = '.build-tokens-light.css';
 const TOKENS_DARK_ARTIFACT = '.build-tokens-dark.css';
 
 const SHARED_IMPORTS = (mode) => `@import "./_umamichi-links.css";
@@ -55,6 +56,29 @@ function adaptTokensDarkForGiscus(css) {
 	let adapted = stripAtRuleBlock(css, /@media\s*\(\s*prefers-color-scheme:\s*dark\s*\)/);
 	adapted = adapted.replace(/\bhtml\.dark\b/g, ':host, :root');
 	return adapted.trim();
+}
+
+/** @param {string} css */
+function adaptTokensLightForGiscus(css) {
+	let adapted = css.replace(/\bhtml\.light\b/g, ':host, :root');
+	adapted = adapted.replace(
+		/@layer umamichi-tokens \{\s*\n\s*:root \{/g,
+		'@layer umamichi-tokens {\n  :host, :root {',
+	);
+	adapted = adapted.replace(
+		/:root,\s*\n\s*html\.dark,\s*\n\s*html:not\(\.light\):not\(\.dark\)/g,
+		':host, :root',
+	);
+	return adapted.trim();
+}
+
+/** @returns {Promise<string>} */
+async function readEmbeddedTokensLightCss() {
+	const tokensPath = path.join(commonCssDistDir, 'tokens.css');
+	const raw = await readFile(tokensPath, 'utf8');
+	const withoutDarkImport = raw.replace(/@import\s+['"]\.\/tokens-dark\.css['"];\s*/g, '');
+	const result = await postcss([postcssImport()]).process(withoutDarkImport, { from: tokensPath });
+	return adaptTokensLightForGiscus(result.css);
 }
 
 /** @returns {Promise<string>} */
@@ -101,14 +125,19 @@ async function loadPalettes() {
 async function buildEntryCss(mode, palette) {
 	const imports = ['@import "@umamichi-ui/common-css/dist/colors.css";'];
 
-	imports.push('@import "@umamichi-ui/common-css/dist/tokens.css";');
+	if (mode === 'light') {
+		imports.push(
+			`@import "${await writeBuildArtifact(TOKENS_LIGHT_ARTIFACT, await readEmbeddedTokensLightCss())}";`,
+		);
+	} else {
+		imports.push('@import "@umamichi-ui/common-css/dist/tokens.css";');
+		imports.push(
+			`@import "${await writeBuildArtifact(TOKENS_DARK_ARTIFACT, await readEmbeddedTokensDarkCss())}";`,
+		);
+	}
 
 	if (palette.id !== null) {
 		imports.push(`@import "${await writePaletteArtifact(palette.id)}";`);
-	}
-
-	if (mode === 'dark') {
-		imports.push(`@import "${await writeBuildArtifact(TOKENS_DARK_ARTIFACT, await readEmbeddedTokensDarkCss())}";`);
 	}
 
 	imports.push(SHARED_IMPORTS(mode).trim());

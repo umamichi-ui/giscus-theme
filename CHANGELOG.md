@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.5.5 - 2026-06-25
+
+### Fixed
+
+- 构建 `light*.css` 时锁定浅色 token：去掉 `tokens.css` 内 `@media (prefers-color-scheme: dark)` 与 `html.dark` 覆盖，并将浅色变量挂到 `:host, :root`，避免系统深色时 iframe 内 giscus 误显示为暗色。
+
 ## 0.5.4 - 2026-06-25
 
 ### Fixed
