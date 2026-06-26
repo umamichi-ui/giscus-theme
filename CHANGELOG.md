@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.5.7 - 2026-06-26
+
+### Changed
+
+- 构建依赖 `@umamichi-ui/common-css` 升至 `^0.15.0`；评论区内嵌 token 同步浅色次要实心按钮 `gray-100` 档。
+
 ## 0.5.6 - 2026-06-26
 
 ### Changed
