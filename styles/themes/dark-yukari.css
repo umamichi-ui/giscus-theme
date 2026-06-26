@@ -715,38 +715,21 @@ html {
   --control-height: 2.375rem;
   --control-padding-inline: 0.75rem;
 
-  /*
-   * umamichi.moe .article-tag uses document-root rem (html stays 1rem).
-   * Counteract iframe type scale (_umamichi-type.css @ 48rem) so reaction pills
-   * match article tags at every viewport width.
-   */
-  --gsc-site-root-rem-factor: 1;
-  --gsc-article-tag-font-size: calc(0.875rem / var(--gsc-site-root-rem-factor));
-  --gsc-article-tag-padding-block: calc(0.25rem / var(--gsc-site-root-rem-factor));
-  --gsc-article-tag-padding-inline: calc(0.75rem / var(--gsc-site-root-rem-factor));
+  /* umamichi.moe .article-tag: 0.875rem, padding 0.25rem 0.75rem, gap 0.5rem */
+  --gsc-article-tag-font-size: 0.875rem;
+  --gsc-article-tag-padding-block: 0.25rem;
+  --gsc-article-tag-padding-inline: 0.75rem;
   --gsc-article-tag-line-height: 1.65;
-  --gsc-article-tag-gap: calc(0.5rem / var(--gsc-site-root-rem-factor));
+  --gsc-article-tag-gap: 0.5rem;
   --gsc-reaction-pill-height: calc(
-    (0.5rem + 0.875rem * var(--gsc-article-tag-line-height)) / var(--gsc-site-root-rem-factor)
+    0.5rem + 0.875rem * var(--gsc-article-tag-line-height)
   );
 }
-@media screen and (min-width: 48rem) {
-  :host,
-  :root {
-    --gsc-site-root-rem-factor: 1.125;
-  }
-}
-/* Root type scale aligned with umamichi.moe site-layout.css (--site-content-font-size). */
+/* Root type scale aligned with umamichi.moe site-layout.css (fixed 1rem body). */
 :host,
 html {
   font-size: 1rem;
   line-height: 1.65;
-}
-@media screen and (min-width: 48rem) {
-  :host,
-  html {
-    font-size: 1.125rem;
-  }
 }
 .gsc-comment-content,
 .gsc-textarea,
@@ -1046,7 +1029,7 @@ html {
   border-radius: var(--radius-sm) !important;
   min-height: 2.125rem;
   padding: 0 0.75rem;
-  font-size: 0.92rem;
+  font-size: 0.875rem;
   box-shadow: none !important;
 }
 .gsc-reply-box .gsc-comment-box .btn:not(.btn-primary),

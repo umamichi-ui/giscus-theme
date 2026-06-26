@@ -2,6 +2,13 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.5.6 - 2026-06-26
+
+### Changed
+
+- 与 umamichi.moe 固定 `1rem` 正文基准对齐：移除 iframe 根字号在 `≥48rem` 的 `1.125rem` 放大及 `--gsc-site-root-rem-factor` 补偿；反应胶囊直接使用与 `.article-tag` 相同的 rem 尺寸。
+- 评论操作按钮字号由 `0.92rem` 改为 `0.875rem`，与站点壳层按钮一致。
+
 ## 0.5.5 - 2026-06-25
 
 ### Fixed
