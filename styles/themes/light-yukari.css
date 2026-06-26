@@ -172,6 +172,16 @@
     --inline-gap: 16px;
     --site-content-font-size: 1rem;
     --site-content-line-height: 1.75;
+
+    /* Font weight scale — shared across Umamichi sites (umamichi.moe, njmetro, common-components). */
+    --site-weight-light: 300;
+    --site-weight-regular: 400;
+    --site-weight-medium: 500;
+    --site-weight-semibold: 600;
+    --site-weight-page-title: var(--site-weight-light);
+    --site-weight-content-h1-h2: var(--site-weight-light);
+    --site-weight-content-h3-h6: var(--site-weight-regular);
+
     --control-height: 38px;
     --control-padding-inline: 12px;
     --transition-fast: 120ms ease;
