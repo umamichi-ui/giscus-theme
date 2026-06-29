@@ -187,6 +187,10 @@
     --transition-fast: 120ms ease;
     --transition-overlay: 200ms ease;
 
+    --site-button-press-scale: 0.98;
+    --site-button-press-duration: 100ms;
+    --site-button-press-easing: cubic-bezier(0.1, 0.9, 0.2, 1);
+
     /* 与 umamichi.moe ArticleSourceActions「GitHub 源文件」等 data-site-button 一致；默认档 -100 */
     --site-button-bg: var(--gray-100);
     --site-button-hover-bg: var(--gray-200);

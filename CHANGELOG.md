@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.5.9 - 2026-06-30
+
+### Changed
+
+- 构建依赖 `@umamichi-ui/common-css` 升至 `^0.18.0`；评论区内嵌样式同步按钮 `:active` scale 按下反馈 token。
+
 ## 0.5.8 - 2026-06-27
 
 ### Changed
