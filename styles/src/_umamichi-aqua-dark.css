@@ -53,11 +53,6 @@ html,
 body {
   background: var(--site-bg);
   color: var(--site-fg);
-  --umamichi-text-selection-bg: var(--theme-900);
-}
-
-::selection {
-  background: var(--umamichi-text-selection-bg);
 }
 
 .gsc-comment-box-textarea,

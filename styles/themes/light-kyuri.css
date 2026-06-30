@@ -157,6 +157,8 @@
     --site-frosted-blur: 12px;
     --site-frosted-overlay: color-mix(in srgb, var(--site-surface) 58%, transparent);
     --site-focus-ring: color-mix(in srgb, var(--site-accent) 22%, transparent);
+    --site-selection-bg: var(--theme-100);
+    --site-selection-fg: inherit;
 
     --radius-sm: 10px;
     --radius-md: 14px;
@@ -423,13 +425,6 @@ main {
   --color-prettylights-syntax-constant: var(--theme-600);
   --color-prettylights-syntax-constant-other-reference-link: var(--theme-700);
 }
-:host,
-html {
-  --umamichi-text-selection-bg: var(--theme-100);
-}
-::selection {
-  background: var(--umamichi-text-selection-bg);
-}
 .gsc-comment-box-textarea,
 .gsc-button {
   box-shadow: none;
@@ -619,6 +614,10 @@ html {
   height: calc(100% - 1rem) !important;
 }
 /* Umamichi UI layout: sharp rectangles for comment card surfaces (not the editor chrome). */
+::selection {
+  background: var(--site-selection-bg);
+  color: var(--site-selection-fg);
+}
 .gsc-comment-box,
 .gsc-comment-box-main,
 .gsc-comment-box-bottom,

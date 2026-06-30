@@ -162,6 +162,8 @@
     --site-backdrop: rgba(1, 4, 9, 0.66);
     --site-frosted-overlay: color-mix(in srgb, var(--site-bg) 68%, transparent);
     --site-focus-ring: color-mix(in srgb, var(--site-accent) 28%, transparent);
+    --site-selection-bg: var(--theme-900);
+    --site-selection-fg: inherit;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -221,6 +223,8 @@
       --site-backdrop: rgba(1, 4, 9, 0.66);
       --site-frosted-overlay: color-mix(in srgb, var(--site-bg) 68%, transparent);
       --site-focus-ring: color-mix(in srgb, var(--site-accent) 28%, transparent);
+      --site-selection-bg: var(--theme-900);
+      --site-selection-fg: inherit;
     }
   }
 }
@@ -277,6 +281,8 @@
     --site-frosted-blur: 12px;
     --site-frosted-overlay: color-mix(in srgb, var(--site-surface) 58%, transparent);
     --site-focus-ring: color-mix(in srgb, var(--site-accent) 22%, transparent);
+    --site-selection-bg: var(--theme-100);
+    --site-selection-fg: inherit;
 
     --radius-sm: 10px;
     --radius-md: 14px;
@@ -394,6 +400,8 @@
     --site-backdrop: rgba(1, 4, 9, 0.66);
     --site-frosted-overlay: color-mix(in srgb, var(--site-bg) 68%, transparent);
     --site-focus-ring: color-mix(in srgb, var(--site-accent) 28%, transparent);
+    --site-selection-bg: var(--theme-900);
+    --site-selection-fg: inherit;
   }
 
   
@@ -648,10 +656,6 @@ html,
 body {
   background: var(--site-bg);
   color: var(--site-fg);
-  --umamichi-text-selection-bg: var(--theme-900);
-}
-::selection {
-  background: var(--umamichi-text-selection-bg);
 }
 .gsc-comment-box-textarea,
 .gsc-button {
@@ -842,6 +846,10 @@ html {
   height: calc(100% - 1rem) !important;
 }
 /* Umamichi UI layout: sharp rectangles for comment card surfaces (not the editor chrome). */
+::selection {
+  background: var(--site-selection-bg);
+  color: var(--site-selection-fg);
+}
 .gsc-comment-box,
 .gsc-comment-box-main,
 .gsc-comment-box-bottom,

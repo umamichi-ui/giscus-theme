@@ -1,5 +1,10 @@
 /* Umamichi UI layout: sharp rectangles for comment card surfaces (not the editor chrome). */
 
+::selection {
+  background: var(--site-selection-bg);
+  color: var(--site-selection-fg);
+}
+
 .gsc-comment-box,
 .gsc-comment-box-main,
 .gsc-comment-box-bottom,

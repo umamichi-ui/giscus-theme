@@ -51,15 +51,6 @@ main {
   --color-prettylights-syntax-constant-other-reference-link: var(--theme-700);
 }
 
-:host,
-html {
-  --umamichi-text-selection-bg: var(--theme-100);
-}
-
-::selection {
-  background: var(--umamichi-text-selection-bg);
-}
-
 .gsc-comment-box-textarea,
 .gsc-button {
   box-shadow: none;

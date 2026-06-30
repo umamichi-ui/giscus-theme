@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.5.10 - 2026-06-30
+
+### Changed
+
+- 构建依赖 `@umamichi-ui/common-css` 升至 `^0.19.0`；移除内嵌 `--umamichi-text-selection-bg` 与重复 `::selection`，改由 common-css `--site-selection-*` token 与 `_umamichi-chrome.css` 统一选区样式。
+
 ## 0.5.9 - 2026-06-30
 
 ### Changed
