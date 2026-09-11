@@ -1,16 +1,17 @@
 /* Standalone palette. Import before tokens.css or use styles/core.css. */
 @layer umamichi-colors {
   :root {
-    /* from https://harmonizer.evilmartians.com/, hue=213. Authoring in oklch; dist/ adds sRGB fallbacks. */
-    --theme-100: rgb(228, 247, 251);
-    --theme-200: rgb(189, 235, 246);
-    --theme-300: rgb(124, 220, 241);
-    --theme-400: rgb(0, 203, 232);
-    --theme-500: rgb(0, 173, 199);
-    --theme-600: rgb(0, 143, 164);
-    --theme-700: rgb(0, 115, 132);
-    --theme-800: rgb(0, 81, 94);
-    --theme-900: rgb(0, 50, 58);
+    /* from https://harmonizer.evilmartians.com/, hue=213. Authoring in oklch; dist/ adds sRGB fallbacks.
+       0.20.0: chroma scaled ×0.75 vs prior Harmonizer export (softer aqua for product UIs). */
+    --theme-100: rgb(232, 246, 249);
+    --theme-200: rgb(199, 233, 241);
+    --theme-300: rgb(148, 216, 231);
+    --theme-400: rgb(84, 199, 222);
+    --theme-500: rgb(7, 173, 199);
+    --theme-600: rgb(7, 142, 163);
+    --theme-700: rgb(5, 114, 132);
+    --theme-800: rgb(2, 81, 93);
+    --theme-900: rgb(1, 50, 58);
 
     --gray-100: #f4f4f5;
     --gray-200: #e4e4e7;
@@ -25,81 +26,15 @@
 
 @supports (color: oklab(0% 0 0%)) {
 :root {
-    --theme-100: oklch(0.962402 0.020313 213);
-    --theme-200: oklch(0.912109 0.05 213);
-    --theme-300: oklch(0.842773 0.095313 213);
-  }
-}
-
-@supports (color: color(display-p3 0 0 0%)) {
-:root {
-    --theme-400: color(display-p3 0.32314 0.78697 0.90755);
-  }
-}
-
-@supports (color: oklab(0% 0 0%)) {
-:root {
-    --theme-400: oklch(0.772949 0.14375 213);
-  }
-}
-
-@supports (color: color(display-p3 0 0 0%)) {
-:root {
-    --theme-500: color(display-p3 0.01931 0.68505 0.81817);
-  }
-}
-
-@supports (color: oklab(0% 0 0%)) {
-:root {
-    --theme-500: oklch(0.687866 0.159375 213);
-  }
-}
-
-@supports (color: color(display-p3 0 0 0%)) {
-:root {
-    --theme-600: color(display-p3 0.02175 0.56307 0.67381);
-  }
-}
-
-@supports (color: oklab(0% 0 0%)) {
-:root {
-    --theme-600: oklch(0.595703 0.1375 213);
-  }
-}
-
-@supports (color: color(display-p3 0 0 0%)) {
-:root {
-    --theme-700: color(display-p3 0.01678 0.4524 0.54311);
-  }
-}
-
-@supports (color: oklab(0% 0 0%)) {
-:root {
-    --theme-700: oklch(0.508789 0.117188 213);
-  }
-}
-
-@supports (color: color(display-p3 0 0 0%)) {
-:root {
-    --theme-800: color(display-p3 0.00476 0.31892 0.38609);
-  }
-}
-
-@supports (color: oklab(0% 0 0%)) {
-:root {
-    --theme-800: oklch(0.398437 0.092188 213);
-  }
-}
-
-@supports (color: color(display-p3 0 0 0%)) {
-:root {
-    --theme-900: color(display-p3 0.00198 0.19694 0.24217);
-  }
-}
-
-@supports (color: oklab(0% 0 0%)) {
-:root {
-    --theme-900: oklch(0.290527 0.067188 213);
+    --theme-100: oklch(0.962402 0.015235 213);
+    --theme-200: oklch(0.912109 0.0375 213);
+    --theme-300: oklch(0.842773 0.071485 213);
+    --theme-400: oklch(0.772949 0.107812 213);
+    --theme-500: oklch(0.687866 0.119531 213);
+    --theme-600: oklch(0.595703 0.103125 213);
+    --theme-700: oklch(0.508789 0.087891 213);
+    --theme-800: oklch(0.398437 0.069141 213);
+    --theme-900: oklch(0.290527 0.050391 213);
   }
 }
 }
@@ -223,67 +158,40 @@
  */
 @layer umamichi-colors {
   :host, :root {
+    /* chroma ×0.75 vs prior scale (aligned with colors.css 0.20.0) */
     --theme-100: rgb(255, 239, 250);
-    --theme-200: rgb(255, 217, 245);
+    --theme-200: rgb(255, 218, 244);
     --theme-300: rgb(255, 186, 237);
-    --theme-400: rgb(255, 151, 231);
-    --theme-500: rgb(227, 124, 204);
-    --theme-600: rgb(187, 102, 168);
-    --theme-700: rgb(151, 81, 136);
-    --theme-800: rgb(108, 56, 96);
-    --theme-900: rgb(69, 34, 61);
+    --theme-400: rgb(247, 159, 226);
+    --theme-500: rgb(213, 137, 195);
+    --theme-600: rgb(176, 112, 161);
+    --theme-700: rgb(142, 90, 129);
+    --theme-800: rgb(101, 62, 92);
+    --theme-900: rgb(64, 38, 58);
   }
-
-@supports (color: color(display-p3 0 0 0%)) {
-:host, :root {
-    --theme-100: color(display-p3 0.99885 0.93365 0.98537);
-  }
-}
 
 @supports (color: oklab(0% 0 0%)) {
 :host, :root {
-    --theme-100: oklch(0.968018 0.029688 336);
+    --theme-100: oklch(0.968018 0.022266 336);
+    --theme-200: oklch(0.925781 0.053906 336);
   }
 }
 
 @supports (color: color(display-p3 0 0 0%)) {
 :host, :root {
-    --theme-200: color(display-p3 0.99807 0.84249 0.96803);
+    --theme-300: color(display-p3 0.95946 0.74221 0.91986);
   }
 }
 
 @supports (color: oklab(0% 0 0%)) {
 :host, :root {
-    --theme-200: oklch(0.925781 0.071875 336);
-  }
-}
-
-@supports (color: color(display-p3 0 0 0%)) {
-:host, :root {
-    --theme-300: color(display-p3 0.99923 0.7087 0.9492);
-  }
-}
-
-@supports (color: oklab(0% 0 0%)) {
-:host, :root {
-    --theme-300: oklch(0.868652 0.135938 336);
-  }
-}
-
-@supports (color: color(display-p3 0 0 0%)) {
-:host, :root {
-    --theme-400: color(display-p3 0.96699 0.58875 0.90764);
-  }
-}
-
-@supports (color: oklab(0% 0 0%)) {
-:host, :root {
-    --theme-400: oklch(0.80957 0.178125 336);
-    --theme-500: oklch(0.725586 0.159375 336);
-    --theme-600: oklch(0.628906 0.1375 336);
-    --theme-700: oklch(0.537109 0.117188 336);
-    --theme-800: oklch(0.421387 0.092188 336);
-    --theme-900: oklch(0.308594 0.067188 336);
+    --theme-300: oklch(0.868652 0.101953 336);
+    --theme-400: oklch(0.80957 0.133594 336);
+    --theme-500: oklch(0.725586 0.119531 336);
+    --theme-600: oklch(0.628906 0.103125 336);
+    --theme-700: oklch(0.537109 0.087891 336);
+    --theme-800: oklch(0.421387 0.069141 336);
+    --theme-900: oklch(0.308594 0.050391 336);
   }
 }
 }

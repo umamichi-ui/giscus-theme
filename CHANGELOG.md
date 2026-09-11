@@ -2,6 +2,12 @@
 
 本文件记录 [@umamichi-ui/giscus-theme](https://www.npmjs.com/package/@umamichi-ui/giscus-theme) 的版本变更。
 
+## 0.5.11 - 2026-09-11
+
+### Changed
+
+- 构建依赖 `@umamichi-ui/common-css` 升至 `^0.20.0`；评论区主题随 aqua / 可选色板 chroma ×0.75 重建。
+
 ## 0.5.10 - 2026-06-30
 
 ### Changed
